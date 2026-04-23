@@ -124,7 +124,8 @@ COPY deploy/entrypoint.sh    /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh \
     && mkdir -p /data/rag_storage /data/output /data/uploads /var/log/supervisor
 
-VOLUME ["/data"]
+# Note: no VOLUME directive — Railway forbids it. Mount a Railway Volume at /data
+# in the dashboard (Service → Variables → Volumes) for persistent rag_storage/uploads.
 EXPOSE 3000 8000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
