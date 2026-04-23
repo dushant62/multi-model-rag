@@ -26,8 +26,13 @@ import type {
   CitationSource,
 } from "@/lib/types";
 
+// When NEXT_PUBLIC_MULTIMODEL_API_BASE_URL is unset, fall back to same-origin
+// in the browser (Next.js rewrites proxy /api/dashboard/* to the backend) and
+// 127.0.0.1:8000 on the server. This keeps local dev + Railway single-port
+// deploy both working without code changes.
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_MULTIMODEL_API_BASE_URL ?? "http://127.0.0.1:8000";
+  process.env.NEXT_PUBLIC_MULTIMODEL_API_BASE_URL ??
+  (typeof window === "undefined" ? "http://127.0.0.1:8000" : "");
 
 async function parseErrorMessage(response: Response): Promise<string> {
   try {

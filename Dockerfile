@@ -29,7 +29,7 @@ COPY dashboard/ ./
 ENV NEXT_TELEMETRY_DISABLED=1
 # API base URL is read at build time for static pages; override at runtime via
 # NEXT_PUBLIC_MULTIMODEL_API_BASE_URL if you deploy behind a reverse proxy.
-ARG NEXT_PUBLIC_MULTIMODEL_API_BASE_URL=http://127.0.0.1:8000
+ARG NEXT_PUBLIC_MULTIMODEL_API_BASE_URL=
 ENV NEXT_PUBLIC_MULTIMODEL_API_BASE_URL=${NEXT_PUBLIC_MULTIMODEL_API_BASE_URL}
 RUN npm run build
 
@@ -48,12 +48,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /build
-COPY pyproject.toml setup.py requirements.txt MANIFEST.in README.md ./
+COPY pyproject.toml setup.py requirements.txt MANIFEST.in ./
 COPY multi_model_rag ./multi_model_rag
 
 # Install into a dedicated prefix so we can copy it cleanly into the runtime
 # image without dragging the apt build-essential chain along.
-RUN pip install --prefix=/install -e . \
+RUN pip install --prefix=/install . \
     && pip install --prefix=/install \
         "fastapi>=0.115.0" \
         "uvicorn[standard]>=0.30.0" \
@@ -75,7 +75,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     BACKEND_PORT=8000 \
     DASHBOARD_PORT=3000 \
     MMR_DASHBOARD_MODE=live \
-    NEXT_PUBLIC_MULTIMODEL_API_BASE_URL=http://127.0.0.1:8000 \
+    NEXT_PUBLIC_MULTIMODEL_API_BASE_URL= \
     WORKING_DIR=/data/rag_storage \
     MMR_DASHBOARD_WORKING_DIR=/data/rag_storage \
     MMR_DASHBOARD_OUTPUT_DIR=/data/output \
@@ -106,7 +106,7 @@ COPY --from=py-build /install /usr/local
 # Keep the source tree so the editable install resolves and dashboard_api can
 # import prompts / static assets packaged alongside.
 WORKDIR /app
-COPY pyproject.toml setup.py requirements.txt README.md ./
+COPY pyproject.toml setup.py requirements.txt ./
 COPY multi_model_rag ./multi_model_rag
 COPY scripts ./scripts
 

@@ -1,5 +1,4 @@
 include requirements.txt
-include README.md
 include README_zh.md
 include LICENSE
 include multi_model_rag/py.typed
