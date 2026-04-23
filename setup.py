@@ -7,7 +7,7 @@ def read_long_description():
     try:
         return Path("README.md").read_text(encoding="utf-8")
     except FileNotFoundError:
-        return "A description of RAGAnything is currently unavailable."
+        return "A description of Multi-Model-RAG is currently unavailable."
 
 
 # Retrieving metadata from __init__.py
@@ -15,7 +15,7 @@ def retrieve_metadata():
     vars2find = ["__author__", "__version__", "__url__"]
     vars2readme = {}
     try:
-        with open("./raganything/__init__.py") as f:
+        with open("./multi_model_rag/__init__.py") as f:
             for line in f.readlines():
                 for v in vars2find:
                     if line.startswith(v):
@@ -27,7 +27,7 @@ def retrieve_metadata():
                         )
                         vars2readme[v] = line.split("=")[1]
     except FileNotFoundError:
-        raise FileNotFoundError("Metadata file './raganything/__init__.py' not found.")
+        raise FileNotFoundError("Metadata file './multi_model_rag/__init__.py' not found.")
 
     # Checking if all required variables are found
     missing_vars = [v for v in vars2find if v not in vars2readme]
@@ -64,6 +64,17 @@ extras_require = {
     "text": ["reportlab>=4.0.0"],  # For text file to PDF conversion (TXT, MD)
     "office": [],  # Office document processing requires LibreOffice (external program)
     "paddleocr": ["paddleocr>=2.7.0", "pypdfium2>=4.25.0"],  # PaddleOCR parser for scanned PDFs
+    "dashboard": [
+        "fastapi>=0.115.0",
+        "uvicorn[standard]>=0.30.0",
+        "python-multipart>=0.0.9",
+        "ollama>=0.4.0",
+    ],
+    "quality": [
+        "FlagEmbedding>=1.3.5",
+        "instructor>=1.7.0",
+        "ragas>=0.2.0",
+    ],
     "all": [
         "Pillow>=10.0.0",
         "reportlab>=4.0.0",
@@ -72,6 +83,13 @@ extras_require = {
         "markdown>=3.4.0",
         "weasyprint>=60.0",
         "pygments>=2.10.0",
+        "fastapi>=0.115.0",
+        "uvicorn[standard]>=0.30.0",
+        "python-multipart>=0.0.9",
+        "ollama>=0.4.0",
+        "FlagEmbedding>=1.3.5",
+        "instructor>=1.7.0",
+        "ragas>=0.2.0",
     ],  # All optional features
     "markdown": [
         "markdown>=3.4.0",
@@ -81,11 +99,11 @@ extras_require = {
 }
 
 setuptools.setup(
-    name="raganything",
+    name="multi-model-rag",
     url=metadata["__url__"],
     version=metadata["__version__"],
     author=metadata["__author__"],
-    description="RAGAnything: All-in-One RAG System",
+    description="Multi-Model-RAG: All-in-One RAG System",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(

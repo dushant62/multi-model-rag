@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Enhanced Markdown Conversion Example for RAG-Anything
+Enhanced Markdown Conversion Example for Multi-Model-RAG
 
 This example demonstrates the enhanced markdown to PDF conversion capabilities
 with multiple backends, advanced styling, and professional formatting.
@@ -23,7 +23,7 @@ import sys
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from raganything.enhanced_markdown import EnhancedMarkdownConverter, MarkdownConfig
+from multi_model_rag.enhanced_markdown import EnhancedMarkdownConverter, MarkdownConfig
 
 
 def create_sample_markdown_content():
@@ -95,7 +95,7 @@ graph LR
 
 ### Python Code Example
 ```python
-from raganything.enhanced_markdown import EnhancedMarkdownConverter, MarkdownConfig
+from multi_model_rag.enhanced_markdown import EnhancedMarkdownConverter, MarkdownConfig
 
 # Configure converter
 config = MarkdownConfig(
@@ -960,7 +960,7 @@ def main():
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     )
 
-    print("RAG-Anything Enhanced Markdown Conversion Demonstration")
+    print("Multi-Model-RAG Enhanced Markdown Conversion Demonstration")
     print("=" * 70)
     print(
         "This example demonstrates various enhanced markdown conversion capabilities:"
@@ -1045,7 +1045,7 @@ def main():
 
     print("\n🎯 Integration Patterns:")
     print("  - Standalone conversion for document generation")
-    print("  - Integration with RAG-Anything document pipeline")
+    print("  - Integration with Multi-Model-RAG document pipeline")
     print("  - API-based document services")
     print("  - Batch processing for multiple documents")
     print("  - Dynamic content generation from templates")

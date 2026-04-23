@@ -1,0 +1,58 @@
+# Keep the build context small & deterministic.
+
+# VCS / editor
+.git
+.gitignore
+.gitattributes
+.github
+.vscode
+.idea
+.pre-commit-config.yaml
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+deploy/entrypoint.sh.bak
+
+# Python caches
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.deepeval
+*.egg-info
+build/
+dist/
+
+# Node caches
+dashboard/node_modules
+dashboard/.next
+dashboard/out
+dashboard/.turbo
+
+# Local state that must never ship in an image
+.env
+.env.*
+!env.example
+rag_storage/
+output/
+out/
+inputs/
+uploads/
+*.log
+.tiktoken_cache/
+tiktoken_cache/
+
+# Docs that bloat the context
+docs/**/*.gif
+docs/**/*.mp4
+assets/**/*.mp4
+assets/**/*.webm
+
+# OS noise
+.DS_Store
+Thumbs.db

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Parser Validation Test Script for RAG-Anything (Pytest)
+Parser Validation Test Script for Multi-Model-RAG (Pytest)
 
 This script validates the environment variable propagation and
 argument validation logic for both MineruParser and DoclingParser.
@@ -8,7 +8,7 @@ It ensures that environment variables are correctly passed to subprocesses
 and that invalid inputs are handled properly (fail-fast).
 
 Requirements:
-- RAG-Anything package
+- Multi-Model-RAG package
 - pytest
 
 Usage:
@@ -18,7 +18,7 @@ Usage:
 import pytest
 from unittest.mock import patch, MagicMock
 import os
-from raganything.parser import MineruParser, DoclingParser
+from multi_model_rag.parser import MineruParser, DoclingParser
 
 
 @pytest.fixture

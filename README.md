@@ -1,33 +1,33 @@
 <div align="center">
 
 <div style="margin: 20px 0;">
-  <img src="./assets/logo.png" width="120" height="120" alt="RAG-Anything Logo" style="border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 217, 255, 0.3);">
+  <img src="./assets/logo.png" width="120" height="120" alt="Multi-Model-RAG Logo" style="border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 217, 255, 0.3);">
 </div>
 
-# 🚀 RAG-Anything: All-in-One RAG Framework
+# 🚀 Multi-Model-RAG: All-in-One RAG Framework
 
-<a href="https://trendshift.io/repositories/14959" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14959" alt="HKUDS%2FRAG-Anything | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/14959" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14959" alt="HKUDS%2FMulti-Model-RAG | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=24&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Welcome+to+RAG-Anything;Next-Gen+Multimodal+RAG+System;Powered+by+Advanced+AI+Technology" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=24&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Welcome+to+Multi-Model-RAG;Next-Gen+Multimodal+RAG+System;Powered+by+Advanced+AI+Technology" alt="Typing Animation" />
 </div>
 
 <div align="center">
   <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 25px; text-align: center;">
     <p>
-      <a href='https://github.com/HKUDS/RAG-Anything'><img src='https://img.shields.io/badge/🔥Project-Page-00d9ff?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e'></a>
+      <a href='https://github.com/HKUDS/Multi-Model-RAG'><img src='https://img.shields.io/badge/🔥Project-Page-00d9ff?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e'></a>
       <a href='https://arxiv.org/abs/2510.12323'><img src='https://img.shields.io/badge/📄arXiv-2510.12323-ff6b6b?style=for-the-badge&logo=arxiv&logoColor=white&labelColor=1a1a2e'></a>
       <a href='https://github.com/HKUDS/LightRAG'><img src='https://img.shields.io/badge/⚡Based%20on-LightRAG-4ecdc4?style=for-the-badge&logo=lightning&logoColor=white&labelColor=1a1a2e'></a>
     </p>
     <p>
-      <a href="https://github.com/HKUDS/RAG-Anything/stargazers"><img src='https://img.shields.io/github/stars/HKUDS/RAG-Anything?color=00d9ff&style=for-the-badge&logo=star&logoColor=white&labelColor=1a1a2e' /></a>
+      <a href="https://github.com/HKUDS/Multi-Model-RAG/stargazers"><img src='https://img.shields.io/github/stars/HKUDS/Multi-Model-RAG?color=00d9ff&style=for-the-badge&logo=star&logoColor=white&labelColor=1a1a2e' /></a>
       <img src="https://img.shields.io/badge/🐍Python-3.10-4ecdc4?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e">
-      <a href="https://pypi.org/project/raganything/"><img src="https://img.shields.io/pypi/v/raganything.svg?style=for-the-badge&logo=pypi&logoColor=white&labelColor=1a1a2e&color=ff6b6b"></a>
+      <a href="https://pypi.org/project/multi-model-rag/"><img src="https://img.shields.io/pypi/v/multi-model-rag.svg?style=for-the-badge&logo=pypi&logoColor=white&labelColor=1a1a2e&color=ff6b6b"></a>
       <a href="https://github.com/astral-sh/uv"><img src="https://img.shields.io/badge/⚡uv-Ready-ff6b6b?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e"></a>
     </p>
     <p>
       <a href="https://discord.gg/yF2MmDJyGJ"><img src="https://img.shields.io/badge/💬Discord-Community-7289da?style=for-the-badge&logo=discord&logoColor=white&labelColor=1a1a2e"></a>
-      <a href="https://github.com/HKUDS/RAG-Anything/issues/7"><img src="https://img.shields.io/badge/💬WeChat-Group-07c160?style=for-the-badge&logo=wechat&logoColor=white&labelColor=1a1a2e"></a>
+      <a href="https://github.com/HKUDS/Multi-Model-RAG/issues/7"><img src="https://img.shields.io/badge/💬WeChat-Group-07c160?style=for-the-badge&logo=wechat&logoColor=white&labelColor=1a1a2e"></a>
     </p>
     <p>
       <a href="README_zh.md"><img src="https://img.shields.io/badge/🇨🇳中文版-1a1a2e?style=for-the-badge"></a>
@@ -72,11 +72,11 @@
 ---
 
 ## 🎉 News
-- [X] [2025.10]🎯📢 🚀 We have released the technical report of [RAG-Anything](http://arxiv.org/abs/2510.12323). Access it now to explore our latest research findings.
-- [X] [2025.08]🎯📢 🔍 RAG-Anything now features **VLM-Enhanced Query** mode! When documents include images, the system seamlessly integrates them into VLM for advanced multimodal analysis, combining visual and textual context for deeper insights.
-- [X] [2025.07]🎯📢 RAG-Anything now features a [context configuration module](docs/context_aware_processing.md), enabling intelligent integration of relevant contextual information to enhance multimodal content processing.
-- [X] [2025.07]🎯📢 🚀 RAG-Anything now supports multimodal query capabilities, enabling enhanced RAG with seamless processing of text, images, tables, and equations.
-- [X] [2025.07]🎯📢 🎉 RAG-Anything has reached 1k🌟 stars on GitHub! Thank you for your incredible support and valuable contributions to the project.
+- [X] [2025.10]🎯📢 🚀 We have released the technical report of [Multi-Model-RAG](http://arxiv.org/abs/2510.12323). Access it now to explore our latest research findings.
+- [X] [2025.08]🎯📢 🔍 Multi-Model-RAG now features **VLM-Enhanced Query** mode! When documents include images, the system seamlessly integrates them into VLM for advanced multimodal analysis, combining visual and textual context for deeper insights.
+- [X] [2025.07]🎯📢 Multi-Model-RAG now features a [context configuration module](docs/context_aware_processing.md), enabling intelligent integration of relevant contextual information to enhance multimodal content processing.
+- [X] [2025.07]🎯📢 🚀 Multi-Model-RAG now supports multimodal query capabilities, enabling enhanced RAG with seamless processing of text, images, tables, and equations.
+- [X] [2025.07]🎯📢 🎉 Multi-Model-RAG has reached 1k🌟 stars on GitHub! Thank you for your incredible support and valuable contributions to the project.
 
 ---
 
@@ -86,13 +86,13 @@
 
 <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 15px; padding: 25px; margin: 20px 0; border: 2px solid #00d9ff; box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);">
 
-Modern documents increasingly contain diverse multimodal content—text, images, tables, equations, charts, and multimedia—that traditional text-focused RAG systems cannot effectively process. **RAG-Anything** addresses this challenge as a comprehensive **All-in-One Multimodal Document Processing RAG system** built on [LightRAG](https://github.com/HKUDS/LightRAG).
+Modern documents increasingly contain diverse multimodal content—text, images, tables, equations, charts, and multimedia—that traditional text-focused RAG systems cannot effectively process. **Multi-Model-RAG** addresses this challenge as a comprehensive **All-in-One Multimodal Document Processing RAG system** built on [LightRAG](https://github.com/HKUDS/LightRAG).
 
-As a unified solution, RAG-Anything **eliminates the need for multiple specialized tools**. It provides **seamless processing and querying across all content modalities** within a single integrated framework. Unlike conventional RAG approaches that struggle with non-textual elements, our all-in-one system delivers **comprehensive multimodal retrieval capabilities**.
+As a unified solution, Multi-Model-RAG **eliminates the need for multiple specialized tools**. It provides **seamless processing and querying across all content modalities** within a single integrated framework. Unlike conventional RAG approaches that struggle with non-textual elements, our all-in-one system delivers **comprehensive multimodal retrieval capabilities**.
 
-Users can query documents containing **interleaved text**, **visual diagrams**, **structured tables**, and **mathematical formulations** through **one cohesive interface**. This consolidated approach makes RAG-Anything particularly valuable for academic research, technical documentation, financial reports, and enterprise knowledge management where rich, mixed-content documents demand a **unified processing framework**.
+Users can query documents containing **interleaved text**, **visual diagrams**, **structured tables**, and **mathematical formulations** through **one cohesive interface**. This consolidated approach makes Multi-Model-RAG particularly valuable for academic research, technical documentation, financial reports, and enterprise knowledge management where rich, mixed-content documents demand a **unified processing framework**.
 
-<img src="assets/rag_anything_framework.png" alt="RAG-Anything" />
+<img src="assets/multi_model_rag_framework.png" alt="Multi-Model-RAG" />
 
 </div>
 
@@ -118,7 +118,7 @@ Users can query documents containing **interleaved text**, **visual diagrams**, 
 
 ### Core Algorithm
 
-**RAG-Anything** implements an effective **multi-stage multimodal pipeline** that fundamentally extends traditional RAG architectures to seamlessly handle diverse content modalities through intelligent orchestration and cross-modal understanding.
+**Multi-Model-RAG** implements an effective **multi-stage multimodal pipeline** that fundamentally extends traditional RAG architectures to seamlessly handle diverse content modalities through intelligent orchestration and cross-modal understanding.
 
 </div>
 
@@ -260,13 +260,13 @@ The hybrid retrieval system combines vector similarity search with graph travers
 
 ```bash
 # Basic installation
-pip install raganything
+pip install multi-model-rag
 
 # With optional dependencies for extended format support:
-pip install 'raganything[all]'              # All optional features
-pip install 'raganything[image]'            # Image format conversion (BMP, TIFF, GIF, WebP)
-pip install 'raganything[text]'             # Text file processing (TXT, MD)
-pip install 'raganything[image,text]'       # Multiple features
+pip install 'multi-model-rag[all]'              # All optional features
+pip install 'multi-model-rag[image]'            # Image format conversion (BMP, TIFF, GIF, WebP)
+pip install 'multi-model-rag[text]'             # Text file processing (TXT, MD)
+pip install 'multi-model-rag[image,text]'       # Multiple features
 ```
 
 #### Option 2: Install from Source
@@ -275,8 +275,8 @@ pip install 'raganything[image,text]'       # Multiple features
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone and setup the project with uv
-git clone https://github.com/HKUDS/RAG-Anything.git
-cd RAG-Anything
+git clone https://github.com/HKUDS/Multi-Model-RAG.git
+cd Multi-Model-RAG
 
 # Install the package and dependencies in a virtual environment
 uv sync
@@ -285,7 +285,7 @@ uv sync
 # UV_HTTP_TIMEOUT=120 uv sync
 
 # Run commands directly with uv (recommended approach)
-uv run python examples/raganything_example.py --help
+uv run python examples/multi_model_rag_example.py --help
 
 # Install with optional dependencies
 uv sync --extra image --extra text  # Specific extras
@@ -296,7 +296,25 @@ uv sync --all-extras                 # All optional features
 
 - **`[image]`** - Enables processing of BMP, TIFF, GIF, WebP image formats (requires Pillow)
 - **`[text]`** - Enables processing of TXT and MD files (requires ReportLab)
+- **`[dashboard]`** - Enables the thin Python dashboard bridge (FastAPI + Uvicorn)
 - **`[all]`** - Includes all Python optional dependencies
+
+#### Dashboard UI Preview
+
+The repository now includes a standalone Perplexity-style dashboard workspace under `dashboard/`.
+
+```bash
+# frontend
+cd dashboard
+npm install
+npm run dev
+
+# optional Python bridge from the repo root
+pip install 'multi-model-rag[dashboard]'
+python -m multi_model_rag.dashboard_api
+```
+
+Set `NEXT_PUBLIC_MULTIMODEL_API_BASE_URL=http://127.0.0.1:8000` to connect the frontend to the Python bridge. Without that bridge, the dashboard falls back to realistic mock data so the UI still runs.
 
 > **⚠️ Office Document Processing Requirements:**
 > - Office documents (.doc, .docx, .ppt, .pptx, .xls, .xlsx) require **LibreOffice** installation
@@ -313,7 +331,7 @@ uv sync --all-extras                 # All optional features
 mineru --version
 
 # Check if properly configured
-python -c "from raganything import RAGAnything; rag = RAGAnything(); print('✅ MinerU installed properly' if rag.check_parser_installation() else '❌ MinerU installation issue')"
+python -c "from multi_model_rag import MultiModelRAG; rag = MultiModelRAG(); print('✅ MinerU installed properly' if rag.check_parser_installation() else '❌ MinerU installation issue')"
 ```
 
 Models are downloaded automatically on first use. For manual download, refer to [MinerU Model Source Configuration](https://github.com/opendatalab/MinerU/blob/master/README.md#22-model-source-configuration).
@@ -324,7 +342,7 @@ Models are downloaded automatically on first use. For manual download, refer to 
 
 ```python
 import asyncio
-from raganything import RAGAnything, RAGAnythingConfig
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc
 
@@ -333,8 +351,8 @@ async def main():
     api_key = "your-api-key"
     base_url = "your-base-url"  # Optional
 
-    # Create RAGAnything configuration
-    config = RAGAnythingConfig(
+    # Create MultiModelRAG configuration
+    config = MultiModelRAGConfig(
         working_dir="./rag_storage",
         parser="mineru",  # Parser selection: mineru, docling, or paddleocr
         parse_method="auto",  # Parse method: auto, ocr, or txt
@@ -417,8 +435,8 @@ async def main():
         ),
     )
 
-    # Initialize RAGAnything
-    rag = RAGAnything(
+    # Initialize MultiModelRAG
+    rag = MultiModelRAG(
         config=config,
         llm_model_func=llm_model_func,
         vision_model_func=vision_model_func,
@@ -463,7 +481,7 @@ import asyncio
 from lightrag import LightRAG
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc
-from raganything.modalprocessors import ImageModalProcessor, TableModalProcessor
+from multi_model_rag.modalprocessors import ImageModalProcessor, TableModalProcessor
 
 async def process_multimodal_content():
     # Set up API configuration
@@ -555,7 +573,7 @@ async def process_multimodal_content():
         "table_body": """
         | Method | Accuracy | F1-Score |
         |--------|----------|----------|
-        | RAGAnything | 95.2% | 0.94 |
+        | MultiModelRAG | 95.2% | 0.94 |
         | Baseline | 87.3% | 0.85 |
         """,
         "table_caption": ["Performance Comparison"],
@@ -589,7 +607,7 @@ await rag.process_folder_complete(
 #### 4. Custom Modal Processors
 
 ```python
-from raganything.modalprocessors import GenericModalProcessor
+from multi_model_rag.modalprocessors import GenericModalProcessor
 
 class CustomModalProcessor(GenericModalProcessor):
     async def process_multimodal_content(self, modal_content, content_type, file_path, entity_name):
@@ -601,7 +619,7 @@ class CustomModalProcessor(GenericModalProcessor):
 
 #### 5. Query Options
 
-RAG-Anything provides three types of query methods:
+Multi-Model-RAG provides three types of query methods:
 
 **Pure Text Queries** - Direct knowledge base search using LightRAG:
 ```python
@@ -652,7 +670,7 @@ table_result = await rag.aquery_with_multimodal(
     multimodal_content=[{
         "type": "table",
         "table_data": """Method,Accuracy,Speed
-                        RAGAnything,95.2%,120ms
+                        MultiModelRAG,95.2%,120ms
                         Traditional,87.3%,180ms""",
         "table_caption": "Performance comparison"
     }],
@@ -675,7 +693,7 @@ equation_result = await rag.aquery_with_multimodal(
 
 ```python
 import asyncio
-from raganything import RAGAnything, RAGAnythingConfig
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 from lightrag import LightRAG
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.kg.shared_storage import initialize_pipeline_status
@@ -774,8 +792,8 @@ async def load_existing_lightrag():
         else:
             return lightrag_instance.llm_model_func(prompt, system_prompt, history_messages, **kwargs)
 
-    # Now use existing LightRAG instance to initialize RAGAnything
-    rag = RAGAnything(
+    # Now use existing LightRAG instance to initialize MultiModelRAG
+    rag = MultiModelRAG(
         lightrag=lightrag_instance,  # Pass existing LightRAG instance
         vision_model_func=vision_model_func,
         # Note: working_dir, llm_model_func, embedding_func, etc. are inherited from lightrag_instance
@@ -800,11 +818,11 @@ if __name__ == "__main__":
 
 #### 7. Direct Content List Insertion
 
-For scenarios where you already have a pre-parsed content list (e.g., from external parsers or previous processing), you can directly insert it into RAGAnything without document parsing:
+For scenarios where you already have a pre-parsed content list (e.g., from external parsers or previous processing), you can directly insert it into MultiModelRAG without document parsing:
 
 ```python
 import asyncio
-from raganything import RAGAnything, RAGAnythingConfig
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc
 
@@ -813,8 +831,8 @@ async def insert_content_list_example():
     api_key = "your-api-key"
     base_url = "your-base-url"  # Optional
 
-    # Create RAGAnything configuration
-    config = RAGAnythingConfig(
+    # Create MultiModelRAG configuration
+    config = MultiModelRAGConfig(
         working_dir="./rag_storage",
         enable_image_processing=True,
         enable_table_processing=True,
@@ -882,8 +900,8 @@ async def insert_content_list_example():
         ),
     )
 
-    # Initialize RAGAnything
-    rag = RAGAnything(
+    # Initialize MultiModelRAG
+    rag = MultiModelRAG(
         config=config,
         llm_model_func=llm_model_func,
         vision_model_func=vision_model_func,
@@ -999,7 +1017,7 @@ This method is particularly useful when:
 
 The `examples/` directory contains comprehensive usage examples:
 
-- **`raganything_example.py`**: End-to-end document processing with MinerU
+- **`multi_model_rag_example.py`**: End-to-end document processing with MinerU
 - **`modalprocessors_example.py`**: Direct multimodal content processing
 - **`office_document_test.py`**: Office document parsing test with MinerU (no API key required)
 - **`image_format_test.py`**: Image format parsing test with MinerU (no API key required)
@@ -1009,7 +1027,7 @@ The `examples/` directory contains comprehensive usage examples:
 
 ```bash
 # End-to-end processing with parser selection
-python examples/raganything_example.py path/to/document.pdf --api-key YOUR_API_KEY --parser mineru
+python examples/multi_model_rag_example.py path/to/document.pdf --api-key YOUR_API_KEY --parser mineru
 
 # Direct modal processing
 python examples/modalprocessors_example.py --api-key YOUR_API_KEY
@@ -1058,7 +1076,7 @@ PARSE_METHOD=auto              # Parse method: auto, ocr, or txt
 
 ### Parser Configuration
 
-RAGAnything now supports multiple parsers, each with specific advantages:
+MultiModelRAG now supports multiple parsers, each with specific advantages:
 
 #### MinerU Parser
 - Supports PDF, images, Office documents, and more formats
@@ -1098,7 +1116,7 @@ mineru -p input.pdf -o output_dir -m ocr     # OCR-focused parsing
 mineru -p input.pdf -o output_dir -b pipeline --device cuda  # GPU acceleration
 ```
 
-You can also configure parsing through RAGAnything parameters:
+You can also configure parsing through MultiModelRAG parameters:
 
 ```python
 # Basic parsing configuration with parser selection
@@ -1127,25 +1145,25 @@ await rag.process_document_complete(
     source="huggingface",        # Model source: "huggingface", "modelscope", "local"
     # vlm_url="http://127.0.0.1:3000" # Service address when using backend=vlm-http-client
 
-    # Standard RAGAnything parameters
+    # Standard MultiModelRAG parameters
     display_stats=True,          # Display content statistics
     split_by_character=None,     # Optional character to split text by
     doc_id=None                  # Optional document ID
 )
 ```
 
-> **Note**: MinerU 2.0 no longer uses the `magic-pdf.json` configuration file. All settings are now passed as command-line parameters or function arguments. RAG-Anything supports multiple document parsers, including MinerU, Docling, and PaddleOCR.
+> **Note**: MinerU 2.0 no longer uses the `magic-pdf.json` configuration file. All settings are now passed as command-line parameters or function arguments. Multi-Model-RAG supports multiple document parsers, including MinerU, Docling, and PaddleOCR.
 
 ### Processing Requirements
 
 Different content types require specific optional dependencies:
 
 - **Office Documents** (.doc, .docx, .ppt, .pptx, .xls, .xlsx): Install [LibreOffice](https://www.libreoffice.org/download/download/)
-- **Extended Image Formats** (.bmp, .tiff, .gif, .webp): Install with `pip install raganything[image]`
-- **Text Files** (.txt, .md): Install with `pip install raganything[text]`
-- **PaddleOCR Parser** (`parser="paddleocr"`): Install with `pip install raganything[paddleocr]`, then install `paddlepaddle` for your platform
+- **Extended Image Formats** (.bmp, .tiff, .gif, .webp): Install with `pip install multi-model-rag[image]`
+- **Text Files** (.txt, .md): Install with `pip install multi-model-rag[text]`
+- **PaddleOCR Parser** (`parser="paddleocr"`): Install with `pip install multi-model-rag[paddleocr]`, then install `paddlepaddle` for your platform
 
-> **📋 Quick Install**: Use `pip install raganything[all]` to enable all format support (Python dependencies only - LibreOffice still needs separate installation)
+> **📋 Quick Install**: Use `pip install multi-model-rag[all]` to enable all format support (Python dependencies only - LibreOffice still needs separate installation)
 
 ---
 
@@ -1182,11 +1200,11 @@ Different content types require specific optional dependencies:
   </div>
 </div>
 
-If you find RAG-Anything useful in your research, please cite our paper:
+If you find Multi-Model-RAG useful in your research, please cite our paper:
 
 ```bibtex
-@misc{guo2025raganythingallinoneragframework,
-      title={RAG-Anything: All-in-One RAG Framework},
+@misc{guo2025multi_model_ragallinoneragframework,
+      title={Multi-Model-RAG: All-in-One RAG Framework},
       author={Zirui Guo and Xubin Ren and Lingrui Xu and Jiahao Zhang and Chao Huang},
       year={2025},
       eprint={2510.12323},
@@ -1243,11 +1261,11 @@ If you find RAG-Anything useful in your research, please cite our paper:
 *Community Growth Trajectory*
 
 <div align="center">
-  <a href="https://star-history.com/#HKUDS/RAG-Anything&Date">
+  <a href="https://star-history.com/#HKUDS/Multi-Model-RAG&Date">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=HKUDS/RAG-Anything&type=Date&theme=dark" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=HKUDS/RAG-Anything&type=Date" />
-      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=HKUDS/RAG-Anything&type=Date" style="border-radius: 15px; box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=HKUDS/Multi-Model-RAG&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=HKUDS/Multi-Model-RAG&type=Date" />
+      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=HKUDS/Multi-Model-RAG&type=Date" style="border-radius: 15px; box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);" />
     </picture>
   </a>
 </div>
@@ -1263,8 +1281,8 @@ If you find RAG-Anything useful in your research, please cite our paper:
 </div>
 
 <div align="center">
-  <a href="https://github.com/HKUDS/RAG-Anything/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=HKUDS/RAG-Anything" style="border-radius: 15px; box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);" />
+  <a href="https://github.com/HKUDS/Multi-Model-RAG/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=HKUDS/Multi-Model-RAG" style="border-radius: 15px; box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);" />
   </a>
 </div>
 
@@ -1275,13 +1293,13 @@ If you find RAG-Anything useful in your research, please cite our paper:
     <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="500">
   </div>
   <div style="margin-top: 20px;">
-    <a href="https://github.com/HKUDS/RAG-Anything" style="text-decoration: none;">
+    <a href="https://github.com/HKUDS/Multi-Model-RAG" style="text-decoration: none;">
       <img src="https://img.shields.io/badge/⭐%20Star%20us%20on%20GitHub-1a1a2e?style=for-the-badge&logo=github&logoColor=white">
     </a>
-    <a href="https://github.com/HKUDS/RAG-Anything/issues" style="text-decoration: none;">
+    <a href="https://github.com/HKUDS/Multi-Model-RAG/issues" style="text-decoration: none;">
       <img src="https://img.shields.io/badge/🐛%20Report%20Issues-ff6b6b?style=for-the-badge&logo=github&logoColor=white">
     </a>
-    <a href="https://github.com/HKUDS/RAG-Anything/discussions" style="text-decoration: none;">
+    <a href="https://github.com/HKUDS/Multi-Model-RAG/discussions" style="text-decoration: none;">
       <img src="https://img.shields.io/badge/💬%20Discussions-4ecdc4?style=for-the-badge&logo=github&logoColor=white">
     </a>
   </div>
@@ -1291,7 +1309,7 @@ If you find RAG-Anything useful in your research, please cite our paper:
   <div style="width: 100%; max-width: 600px; margin: 20px auto; padding: 20px; background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(0, 217, 255, 0.05) 100%); border-radius: 15px; border: 1px solid rgba(0, 217, 255, 0.2);">
     <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
       <span style="font-size: 24px;">⭐</span>
-      <span style="color: #00d9ff; font-size: 18px;">Thank you for visiting RAG-Anything!</span>
+      <span style="color: #00d9ff; font-size: 18px;">Thank you for visiting Multi-Model-RAG!</span>
       <span style="font-size: 24px;">⭐</span>
     </div>
     <div style="margin-top: 10px; color: #00d9ff; font-size: 16px;">Building the Future of Multimodal AI</div>

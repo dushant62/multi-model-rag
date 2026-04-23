@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Example script demonstrating direct content list insertion with RAGAnything
+Example script demonstrating direct content list insertion with MultiModelRAG
 
 This example shows how to:
 1. Create a simple content list with different content types
@@ -24,7 +24,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc, logger, set_verbose_debug
-from raganything import RAGAnything, RAGAnythingConfig
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 
 from dotenv import load_dotenv
 
@@ -104,14 +104,14 @@ def create_sample_content_list():
         # Introduction text
         {
             "type": "text",
-            "text": "Welcome to the RAGAnything System Documentation. This guide covers the advanced multimodal document processing capabilities and features of our comprehensive RAG system.",
+            "text": "Welcome to the MultiModelRAG System Documentation. This guide covers the advanced multimodal document processing capabilities and features of our comprehensive RAG system.",
             "page_idx": 0,  # Page number where this content appears
         },
         # System architecture image
         {
             "type": "image",
             "img_path": "/absolute/path/to/system_architecture.jpg",  # IMPORTANT: Use absolute path to image file
-            "image_caption": ["Figure 1: RAGAnything System Architecture"],
+            "image_caption": ["Figure 1: MultiModelRAG System Architecture"],
             "image_footnote": [
                 "The architecture shows the complete pipeline from document parsing to multimodal query processing"
             ],
@@ -122,7 +122,7 @@ def create_sample_content_list():
             "type": "table",
             "table_body": """| System | Accuracy | Processing Speed | Memory Usage |
                             |--------|----------|------------------|--------------|
-                            | RAGAnything | 95.2% | 120ms | 2.1GB |
+                            | MultiModelRAG | 95.2% | 120ms | 2.1GB |
                             | Traditional RAG | 87.3% | 180ms | 3.2GB |
                             | Baseline System | 82.1% | 220ms | 4.1GB |
                             | Simple Retrieval | 76.5% | 95ms | 1.8GB |""",
@@ -166,7 +166,7 @@ def create_sample_content_list():
         # Conclusion
         {
             "type": "text",
-            "text": "RAGAnything represents a significant advancement in multimodal document processing, providing comprehensive solutions for complex knowledge extraction and retrieval tasks.",
+            "text": "MultiModelRAG represents a significant advancement in multimodal document processing, providing comprehensive solutions for complex knowledge extraction and retrieval tasks.",
             "page_idx": 6,  # Page number where this content appears
         },
     ]
@@ -180,7 +180,7 @@ async def demo_insert_content_list(
     working_dir: str = None,
 ):
     """
-    Demonstrate content list insertion and querying with RAGAnything
+    Demonstrate content list insertion and querying with MultiModelRAG
 
     Args:
         api_key: OpenAI API key
@@ -188,8 +188,8 @@ async def demo_insert_content_list(
         working_dir: Working directory for RAG storage
     """
     try:
-        # Create RAGAnything configuration
-        config = RAGAnythingConfig(
+        # Create MultiModelRAG configuration
+        config = MultiModelRAGConfig(
             working_dir=working_dir or "./rag_storage",
             enable_image_processing=True,
             enable_table_processing=True,
@@ -260,8 +260,8 @@ async def demo_insert_content_list(
             ),
         )
 
-        # Initialize RAGAnything
-        rag = RAGAnything(
+        # Initialize MultiModelRAG
+        rag = MultiModelRAG(
             config=config,
             llm_model_func=llm_model_func,
             vision_model_func=vision_model_func,
@@ -274,10 +274,10 @@ async def demo_insert_content_list(
         logger.info(f"Created content list with {len(content_list)} items")
 
         # Insert content list directly
-        logger.info("\nInserting content list into RAGAnything...")
+        logger.info("\nInserting content list into MultiModelRAG...")
         await rag.insert_content_list(
             content_list=content_list,
-            file_path="raganything_documentation.pdf",  # Reference file name for citation
+            file_path="multi_model_rag_documentation.pdf",  # Reference file name for citation
             split_by_character=None,  # Optional text splitting
             split_by_character_only=False,  # Optional text splitting mode
             doc_id="demo-doc-001",  # Custom document ID
@@ -290,8 +290,8 @@ async def demo_insert_content_list(
 
         # 1. Pure text queries using aquery()
         text_queries = [
-            "What is RAGAnything and what are its main features?",
-            "How does RAGAnything compare to traditional RAG systems?",
+            "What is MultiModelRAG and what are its main features?",
+            "How does MultiModelRAG compare to traditional RAG systems?",
             "What are the technical specifications of the system?",
         ]
 
@@ -414,7 +414,7 @@ if __name__ == "__main__":
     # Configure logging first
     configure_logging()
 
-    print("RAGAnything Insert Content List Example")
+    print("MultiModelRAG Insert Content List Example")
     print("=" * 45)
     print("Demonstrating direct content list insertion without document parsing")
     print("=" * 45)

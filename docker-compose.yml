@@ -1,0 +1,70 @@
+# Multi-Model-RAG — local & cloud-ready compose stack.
+#
+#   docker compose up --build
+#
+# Defaults to the Ollama provider; uncomment an OpenAI-compatible provider
+# under environment: if you prefer.
+
+services:
+  multi-model-rag:
+    build:
+      context: .
+      args:
+        # Served by the same container on :3000, so the browser talks to the
+        # backend via the public dashboard URL's /api path through Next.
+        # For a split deploy, override at build time.
+        NEXT_PUBLIC_MULTIMODEL_API_BASE_URL: ${NEXT_PUBLIC_MULTIMODEL_API_BASE_URL:-http://127.0.0.1:8000}
+    image: multi-model-rag:latest
+    container_name: multi-model-rag
+    ports:
+      - "${DASHBOARD_PORT:-3000}:3000"
+      - "${BACKEND_PORT:-8000}:8000"
+    environment:
+      MMR_DASHBOARD_MODE: live
+      MMR_DASHBOARD_PROVIDER: ${MMR_DASHBOARD_PROVIDER:-ollama}
+
+      # --- Ollama (default) ------------------------------------------------
+      OLLAMA_HOST: ${OLLAMA_HOST:-http://ollama:11434}
+      OLLAMA_LLM_MODEL: ${OLLAMA_LLM_MODEL:-gemma3:1b}
+      OLLAMA_EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-nomic-embed-text}
+      OLLAMA_EMBEDDING_DIM: ${OLLAMA_EMBEDDING_DIM:-768}
+
+      # --- OpenAI-compatible (uncomment to switch) -------------------------
+      # MMR_DASHBOARD_PROVIDER: openai
+      # OPENAI_API_KEY: ${OPENAI_API_KEY}
+      # OPENAI_API_BASE: ${OPENAI_API_BASE:-https://api.openai.com/v1}
+      # OPENAI_LLM_MODEL: ${OPENAI_LLM_MODEL:-gpt-4o-mini}
+      # OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+
+      ENABLE_RERANKER: "false"
+      MMR_DASHBOARD_CORS_ORIGINS: ${MMR_DASHBOARD_CORS_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000}
+      NEXT_PUBLIC_MULTIMODEL_API_BASE_URL: ${NEXT_PUBLIC_MULTIMODEL_API_BASE_URL:-http://127.0.0.1:8000}
+    volumes:
+      - mmr-data:/data
+    depends_on:
+      ollama:
+        condition: service_healthy
+        required: false
+    restart: unless-stopped
+
+  # Optional: an Ollama sidecar so the compose stack is self-contained.
+  # Remove this service (and the depends_on above) if you already run Ollama
+  # on the host and point OLLAMA_HOST at http://host.docker.internal:11434.
+  ollama:
+    image: ollama/ollama:latest
+    container_name: mmr-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  mmr-data:
+  ollama-models:

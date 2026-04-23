@@ -1,13 +1,13 @@
 """
-LM Studio Integration Example with RAG-Anything
+LM Studio Integration Example with Multi-Model-RAG
 
-This example demonstrates how to integrate LM Studio with RAG-Anything for local
+This example demonstrates how to integrate LM Studio with Multi-Model-RAG for local
 text document processing and querying.
 
 Requirements:
 - LM Studio running locally with server enabled
 - OpenAI Python package: pip install openai
-- RAG-Anything installed: pip install raganything
+- Multi-Model-RAG installed: pip install multi-model-rag
 
 Environment Setup:
 Create a .env file with:
@@ -31,8 +31,8 @@ from openai import AsyncOpenAI
 # Load environment variables
 load_dotenv()
 
-# RAG-Anything imports
-from raganything import RAGAnything, RAGAnythingConfig
+# Multi-Model-RAG imports
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 from lightrag.utils import EmbeddingFunc
 from lightrag.llm.openai import openai_complete_if_cache
 
@@ -74,7 +74,7 @@ async def lmstudio_embedding_async(texts: List[str]) -> List[List[float]]:
 
 
 class LMStudioRAGIntegration:
-    """Integration class for LM Studio with RAG-Anything."""
+    """Integration class for LM Studio with Multi-Model-RAG."""
 
     def __init__(self):
         # LM Studio configuration using standard LLM_BINDING variables
@@ -85,9 +85,9 @@ class LMStudioRAGIntegration:
             "EMBEDDING_MODEL", "text-embedding-nomic-embed-text-v1.5"
         )
 
-        # RAG-Anything configuration
+        # Multi-Model-RAG configuration
         # Use a fresh working directory each run to avoid legacy doc_status schema conflicts
-        self.config = RAGAnythingConfig(
+        self.config = MultiModelRAGConfig(
             working_dir=f"./rag_storage_lmstudio/{uuid.uuid4()}",
             parser="mineru",
             parse_method="auto",
@@ -173,11 +173,11 @@ class LMStudioRAGIntegration:
         )
 
     async def initialize_rag(self):
-        """Initialize RAG-Anything with LM Studio functions."""
-        print("Initializing RAG-Anything with LM Studio...")
+        """Initialize Multi-Model-RAG with LM Studio functions."""
+        print("Initializing Multi-Model-RAG with LM Studio...")
 
         try:
-            self.rag = RAGAnything(
+            self.rag = MultiModelRAG(
                 config=self.config,
                 llm_model_func=lmstudio_llm_model_func,
                 embedding_func=self.embedding_func_factory(),
@@ -190,7 +190,7 @@ class LMStudioRAGIntegration:
 
             self.rag._mark_multimodal_processing_complete = _noop_mark_multimodal
 
-            print("✅ RAG-Anything initialized successfully!")
+            print("✅ Multi-Model-RAG initialized successfully!")
             return True
         except Exception as e:
             print(f"❌ RAG initialization failed: {str(e)}")
@@ -245,17 +245,17 @@ class LMStudioRAGIntegration:
         try:
             print("\nAdding sample content for testing...")
 
-            # Create content list in the format expected by RAGAnything
+            # Create content list in the format expected by MultiModelRAG
             content_list = [
                 {
                     "type": "text",
-                    "text": """LM Studio Integration with RAG-Anything
+                    "text": """LM Studio Integration with Multi-Model-RAG
 
-This integration demonstrates how to connect LM Studio's local AI models with RAG-Anything's document processing capabilities. The system uses:
+This integration demonstrates how to connect LM Studio's local AI models with Multi-Model-RAG's document processing capabilities. The system uses:
 
 - LM Studio for local LLM inference
 - nomic-embed-text-v1.5 for embeddings (768 dimensions)
-- RAG-Anything for document processing and retrieval
+- Multi-Model-RAG for document processing and retrieval
 
 Key benefits include:
 - Privacy: All processing happens locally
@@ -292,7 +292,7 @@ Key benefits include:
 async def main():
     """Main example function."""
     print("=" * 70)
-    print("LM Studio + RAG-Anything Integration Example")
+    print("LM Studio + Multi-Model-RAG Integration Example")
     print("=" * 70)
 
     # Initialize integration

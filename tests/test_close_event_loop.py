@@ -1,7 +1,7 @@
-"""Tests for RAGAnything.close() event loop handling (issue #135).
+"""Tests for MultiModelRAG.close() event loop handling (issue #135).
 
 Standalone test that reproduces the close() logic without importing the full
-RAGAnything module (which requires heavy deps like lightrag, dotenv, etc.).
+MultiModelRAG module (which requires heavy deps like lightrag, dotenv, etc.).
 """
 
 import asyncio

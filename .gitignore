@@ -78,3 +78,16 @@ memory-bank/
 .claude/
 .cursor/
 CLAUDE.md
+
+# Node / Next.js (dashboard)
+node_modules/
+.next/
+dashboard/node_modules/
+dashboard/.next/
+dashboard/out/
+
+# Runtime data dirs (created by entrypoint.sh)
+/data/
+uploads/
+output/
+/output

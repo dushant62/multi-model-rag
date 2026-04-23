@@ -1,5 +1,5 @@
 """
-Comprehensive tests for RAGAnything core modules.
+Comprehensive tests for MultiModelRAG core modules.
 
 Covers: config, utils, base, batch_parser, and enhanced_markdown.
 Expands the project's test surface area significantly.
@@ -9,9 +9,9 @@ import pytest
 import base64
 from pathlib import Path
 
-from raganything.config import RAGAnythingConfig
-from raganything.base import DocStatus
-from raganything.utils import (
+from multi_model_rag.config import MultiModelRAGConfig
+from multi_model_rag.base import DocStatus
+from multi_model_rag.utils import (
     separate_content,
     encode_image_to_base64,
     validate_image_file,
@@ -41,10 +41,10 @@ class TestDocStatus:
         assert len(values) == len(set(values))
 
 
-# ── RAGAnythingConfig Tests ──────────────────────────────────────
+# ── MultiModelRAGConfig Tests ──────────────────────────────────────
 
 
-class TestRAGAnythingConfig:
+class TestMultiModelRAGConfig:
     def test_default_values(self, monkeypatch):
         # Clear environment overrides to make defaults deterministic
         for key in [
@@ -63,7 +63,7 @@ class TestRAGAnythingConfig:
         ]:
             monkeypatch.delenv(key, raising=False)
 
-        config = RAGAnythingConfig()
+        config = MultiModelRAGConfig()
         assert config.parse_method == "auto"
         assert config.parser == "mineru"
         assert config.enable_image_processing is True
@@ -78,7 +78,7 @@ class TestRAGAnythingConfig:
         assert config.use_full_path is False
 
     def test_custom_values(self):
-        config = RAGAnythingConfig(
+        config = MultiModelRAGConfig(
             working_dir="/tmp/custom",
             parser="docling",
             parse_method="ocr",
@@ -94,22 +94,22 @@ class TestRAGAnythingConfig:
         assert config.context_window == 3
 
     def test_supported_file_extensions_is_list(self):
-        config = RAGAnythingConfig()
+        config = MultiModelRAGConfig()
         assert isinstance(config.supported_file_extensions, list)
         assert ".pdf" in config.supported_file_extensions
 
     def test_context_filter_content_types(self):
-        config = RAGAnythingConfig()
+        config = MultiModelRAGConfig()
         assert isinstance(config.context_filter_content_types, list)
         assert "text" in config.context_filter_content_types
 
     def test_deprecated_mineru_parse_method(self):
-        config = RAGAnythingConfig(parse_method="ocr")
+        config = MultiModelRAGConfig(parse_method="ocr")
         with pytest.warns(DeprecationWarning, match="deprecated"):
             _ = config.mineru_parse_method
 
     def test_deprecated_mineru_parse_method_setter(self):
-        config = RAGAnythingConfig()
+        config = MultiModelRAGConfig()
         with pytest.warns(DeprecationWarning, match="deprecated"):
             config.mineru_parse_method = "txt"
         assert config.parse_method == "txt"
@@ -291,7 +291,7 @@ class TestGetProcessorSupports:
 
 class TestBatchProcessingResult:
     def test_success_rate_calculation(self):
-        from raganything.batch_parser import BatchProcessingResult
+        from multi_model_rag.batch_parser import BatchProcessingResult
 
         result = BatchProcessingResult(
             successful_files=["a.pdf", "b.pdf"],
@@ -304,7 +304,7 @@ class TestBatchProcessingResult:
         assert result.success_rate == pytest.approx(66.67, abs=0.1)
 
     def test_success_rate_zero_files(self):
-        from raganything.batch_parser import BatchProcessingResult
+        from multi_model_rag.batch_parser import BatchProcessingResult
 
         result = BatchProcessingResult(
             successful_files=[],
@@ -317,7 +317,7 @@ class TestBatchProcessingResult:
         assert result.success_rate == 0.0
 
     def test_summary_contains_info(self):
-        from raganything.batch_parser import BatchProcessingResult
+        from multi_model_rag.batch_parser import BatchProcessingResult
 
         result = BatchProcessingResult(
             successful_files=["a.pdf"],
@@ -334,7 +334,7 @@ class TestBatchProcessingResult:
         assert "5.50 seconds" in summary
 
     def test_dry_run_flag(self):
-        from raganything.batch_parser import BatchProcessingResult
+        from multi_model_rag.batch_parser import BatchProcessingResult
 
         result = BatchProcessingResult(
             successful_files=[],
@@ -354,7 +354,7 @@ class TestBatchProcessingResult:
 
 class TestBatchParserInit:
     def test_supported_extensions(self):
-        from raganything.batch_parser import BatchParser
+        from multi_model_rag.batch_parser import BatchParser
 
         bp = BatchParser(parser_type="mineru", skip_installation_check=True)
         exts = bp.get_supported_extensions()
@@ -363,13 +363,13 @@ class TestBatchParserInit:
         assert ".docx" in exts
 
     def test_invalid_parser_type(self):
-        from raganything.batch_parser import BatchParser
+        from multi_model_rag.batch_parser import BatchParser
 
         with pytest.raises(ValueError, match="Unsupported parser type"):
             BatchParser(parser_type="nonexistent", skip_installation_check=True)
 
     def test_filter_supported_files(self, tmp_path):
-        from raganything.batch_parser import BatchParser
+        from multi_model_rag.batch_parser import BatchParser
 
         # Create test files
         (tmp_path / "doc.pdf").write_bytes(b"pdf")
@@ -386,7 +386,7 @@ class TestBatchParserInit:
         assert "readme.py" not in supported_names
 
     def test_filter_nonexistent_path(self):
-        from raganything.batch_parser import BatchParser
+        from multi_model_rag.batch_parser import BatchParser
 
         bp = BatchParser(parser_type="mineru", skip_installation_check=True)
         result = bp.filter_supported_files(["/nonexistent/path"])

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Image Format Parsing Test Script for RAG-Anything
+Image Format Parsing Test Script for Multi-Model-RAG
 
 This script demonstrates how to parse various image formats
 using MinerU, including JPG, PNG, BMP, TIFF, GIF, and WebP files.
 
 Requirements:
 - PIL/Pillow library for format conversion
-- RAG-Anything package
+- Multi-Model-RAG package
 
 Usage:
     python image_format_test.py --file path/to/image.bmp
@@ -17,7 +17,7 @@ import argparse
 import asyncio
 import sys
 from pathlib import Path
-from raganything import RAGAnything
+from multi_model_rag import MultiModelRAG
 
 
 def check_pillow_installation():
@@ -101,8 +101,8 @@ async def test_image_format_parsing(file_path: str):
     else:
         print(f"✅ Format {file_path.suffix.upper()} is natively supported by MinerU")
 
-    # Initialize RAGAnything (only for parsing functionality)
-    rag = RAGAnything()
+    # Initialize MultiModelRAG (only for parsing functionality)
+    rag = MultiModelRAG()
 
     try:
         # Test image parsing with MinerU

@@ -7,7 +7,7 @@ reasoning instead of actual content descriptions.  These tests verify that the
 fallback path strips thinking tags before storing or returning the response.
 """
 
-from raganything.modalprocessors import BaseModalProcessor
+from multi_model_rag.modalprocessors import BaseModalProcessor
 
 
 class TestStripThinkingTags:
@@ -79,7 +79,7 @@ class TestParseResponseFallback:
         self.proc._robust_json_parse = always_fail
 
     def test_image_fallback_strips_think(self):
-        from raganything.modalprocessors import ImageModalProcessor
+        from multi_model_rag.modalprocessors import ImageModalProcessor
 
         proc = ConcreteProcessor()
         proc.__class__ = ImageModalProcessor
@@ -91,7 +91,7 @@ class TestParseResponseFallback:
         assert "actual description" in caption
 
     def test_table_fallback_strips_think(self):
-        from raganything.modalprocessors import TableModalProcessor
+        from multi_model_rag.modalprocessors import TableModalProcessor
 
         proc = ConcreteProcessor()
         proc.__class__ = TableModalProcessor
@@ -103,7 +103,7 @@ class TestParseResponseFallback:
         assert "actual description" in caption
 
     def test_equation_fallback_strips_think(self):
-        from raganything.modalprocessors import EquationModalProcessor
+        from multi_model_rag.modalprocessors import EquationModalProcessor
 
         proc = ConcreteProcessor()
         proc.__class__ = EquationModalProcessor
@@ -114,7 +114,7 @@ class TestParseResponseFallback:
         assert "<think>" not in entity["summary"]
 
     def test_generic_fallback_strips_think(self):
-        from raganything.modalprocessors import GenericModalProcessor
+        from multi_model_rag.modalprocessors import GenericModalProcessor
 
         proc = ConcreteProcessor()
         proc.__class__ = GenericModalProcessor

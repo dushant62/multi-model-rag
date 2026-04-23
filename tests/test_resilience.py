@@ -2,7 +2,7 @@
 
 import pytest
 
-from raganything.resilience import CircuitBreaker, async_retry, retry
+from multi_model_rag.resilience import CircuitBreaker, async_retry, retry
 
 
 class TestSyncRetry:

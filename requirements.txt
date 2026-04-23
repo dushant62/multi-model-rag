@@ -12,5 +12,5 @@ tqdm
 # - [office]: requires LibreOffice (external program, not Python package)
 # - [all]: includes all optional dependencies
 #
-# Install with: pip install raganything[image,text] or pip install raganything[all]
-# For best PDF handling: pip install raganything[paddleocr]
+# Install with: pip install multi-model-rag[image,text] or pip install multi-model-rag[all]
+# For best PDF handling: pip install multi-model-rag[paddleocr]

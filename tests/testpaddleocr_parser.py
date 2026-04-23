@@ -3,8 +3,8 @@ import sys
 
 import pytest
 
-import raganything.parser as parser_module
-from raganything.parser import PaddleOCRParser, SUPPORTED_PARSERS, get_parser
+import multi_model_rag.parser as parser_module
+from multi_model_rag.parser import PaddleOCRParser, SUPPORTED_PARSERS, get_parser
 
 
 def test_supported_parsers_include_paddleocr():

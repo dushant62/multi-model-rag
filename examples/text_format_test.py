@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Text Format Parsing Test Script for RAG-Anything
+Text Format Parsing Test Script for Multi-Model-RAG
 
 This script demonstrates how to parse various text formats
 using MinerU, including TXT and MD files.
 
 Requirements:
 - ReportLab library for PDF conversion
-- RAG-Anything package
+- Multi-Model-RAG package
 
 Usage:
     python text_format_test.py --file path/to/text/document.md
@@ -17,7 +17,7 @@ import argparse
 import asyncio
 import sys
 from pathlib import Path
-from raganything import RAGAnything
+from multi_model_rag import MultiModelRAG
 
 
 def check_reportlab_installation():
@@ -66,8 +66,8 @@ async def test_text_format_parsing(file_path: str):
             "⚠️  Text encoding: Non-UTF-8 (will try multiple encodings during processing)"
         )
 
-    # Initialize RAGAnything (only for parsing functionality)
-    rag = RAGAnything()
+    # Initialize MultiModelRAG (only for parsing functionality)
+    rag = MultiModelRAG()
 
     try:
         # Test text parsing with MinerU

@@ -1,10 +1,10 @@
-# Context-Aware Multimodal Processing in RAGAnything
+# Context-Aware Multimodal Processing in MultiModelRAG
 
-This document describes the context-aware multimodal processing feature in RAGAnything, which provides surrounding content information to LLMs when analyzing images, tables, equations, and other multimodal content for enhanced accuracy and relevance.
+This document describes the context-aware multimodal processing feature in MultiModelRAG, which provides surrounding content information to LLMs when analyzing images, tables, equations, and other multimodal content for enhanced accuracy and relevance.
 
 ## Overview
 
-The context-aware feature enables RAGAnything to automatically extract and provide surrounding text content as context when processing multimodal content. This leads to more accurate and contextually relevant analysis by giving AI models additional information about where the content appears in the document structure.
+The context-aware feature enables MultiModelRAG to automatically extract and provide surrounding text content as context when processing multimodal content. This leads to more accurate and contextually relevant analysis by giving AI models additional information about where the content appears in the document structure.
 
 ### Key Benefits
 
@@ -16,7 +16,7 @@ The context-aware feature enables RAGAnything to automatically extract and provi
 ## Key Features
 
 ### 1. Configuration Support
-- **Integrated Configuration**: Complete context options in `RAGAnythingConfig`
+- **Integrated Configuration**: Complete context options in `MultiModelRAGConfig`
 - **Environment Variables**: Configure all context parameters via environment variables
 - **Dynamic Updates**: Runtime configuration updates supported
 - **Content Format Control**: Configurable content source format detection
@@ -40,7 +40,7 @@ The context-aware feature enables RAGAnything to automatically extract and provi
 
 ## Configuration
 
-### RAGAnythingConfig Parameters
+### MultiModelRAGConfig Parameters
 
 ```python
 # Context Extraction Configuration
@@ -71,10 +71,10 @@ CONTENT_FORMAT=minerU
 ### 1. Basic Configuration
 
 ```python
-from raganything import RAGAnything, RAGAnythingConfig
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 
 # Create configuration with context settings
-config = RAGAnythingConfig(
+config = MultiModelRAGConfig(
     context_window=2,
     context_mode="page",
     max_context_tokens=3000,
@@ -84,8 +84,8 @@ config = RAGAnythingConfig(
     content_format="minerU"
 )
 
-# Create RAGAnything instance
-rag_anything = RAGAnything(
+# Create MultiModelRAG instance
+multi_model_rag = MultiModelRAG(
     config=config,
     llm_model_func=your_llm_function,
     embedding_func=your_embedding_function
@@ -96,17 +96,17 @@ rag_anything = RAGAnything(
 
 ```python
 # Context is automatically enabled during document processing
-await rag_anything.process_document_complete("document.pdf")
+await multi_model_rag.process_document_complete("document.pdf")
 ```
 
 ### 3. Manual Content Source Configuration
 
 ```python
 # Set content source for specific content lists
-rag_anything.set_content_source_for_context(content_list, "minerU")
+multi_model_rag.set_content_source_for_context(content_list, "minerU")
 
 # Update context configuration at runtime
-rag_anything.update_context_config(
+multi_model_rag.update_context_config(
     context_window=1,
     max_context_tokens=1500,
     include_captions=False
@@ -116,7 +116,7 @@ rag_anything.update_context_config(
 ### 4. Direct Modal Processor Usage
 
 ```python
-from raganything.modalprocessors import (
+from multi_model_rag.modalprocessors import (
     ContextExtractor,
     ContextConfig,
     ImageModalProcessor
@@ -228,7 +228,7 @@ full_document = "Complete document text with all content..."
 ### High-Precision Context
 For focused analysis with minimal context:
 ```python
-config = RAGAnythingConfig(
+config = MultiModelRAGConfig(
     context_window=1,
     context_mode="page",
     max_context_tokens=1000,
@@ -241,7 +241,7 @@ config = RAGAnythingConfig(
 ### Comprehensive Context
 For broad analysis with rich context:
 ```python
-config = RAGAnythingConfig(
+config = MultiModelRAGConfig(
     context_window=2,
     context_mode="page",
     max_context_tokens=3000,
@@ -254,7 +254,7 @@ config = RAGAnythingConfig(
 ### Chunk-Based Analysis
 For fine-grained sequential context:
 ```python
-config = RAGAnythingConfig(
+config = MultiModelRAGConfig(
     context_window=5,
     context_mode="chunk",
     max_context_tokens=2000,
@@ -304,9 +304,9 @@ When `include_captions=True`, image and table captions are included as:
 [Table: Table 1 caption text]
 ```
 
-## Integration with RAGAnything
+## Integration with MultiModelRAG
 
-The context-aware feature is seamlessly integrated into RAGAnything's workflow:
+The context-aware feature is seamlessly integrated into MultiModelRAG's workflow:
 
 1. **Automatic Setup**: Context extractors are automatically created and configured
 2. **Content Source Management**: Document processing automatically sets content sources
@@ -356,7 +356,7 @@ The system includes robust error handling:
 
 **Configuration Issues**
 - Verify environment variables are set correctly
-- Check RAGAnythingConfig parameter names
+- Check MultiModelRAGConfig parameter names
 - Ensure content_format matches your data source
 
 ## Examples
@@ -370,6 +370,6 @@ Check out these example files for complete usage demonstrations:
 ## API Reference
 
 For detailed API documentation, see the docstrings in:
-- `raganything/modalprocessors.py` - Context extraction and modal processors
-- `raganything/config.py` - Configuration options
-- `raganything/raganything.py` - Main RAGAnything class integration
+- `multi_model_rag/modalprocessors.py` - Context extraction and modal processors
+- `multi_model_rag/config.py` - Configuration options
+- `multi_model_rag/multi_model_rag.py` - Main MultiModelRAG class integration

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """
-Example script demonstrating the integration of MinerU parser with RAGAnything
+Example script demonstrating the integration of MinerU parser with MultiModelRAG
 
 This example shows how to:
-1. Process documents with RAGAnything using MinerU parser
+1. Process documents with MultiModelRAG using MinerU parser
 2. Perform pure text queries using aquery() method
 3. Perform multimodal queries with specific multimodal content using aquery_with_multimodal() method
 4. Handle different types of multimodal content (tables, equations) in queries
@@ -24,7 +24,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc, logger, set_verbose_debug
-from raganything import RAGAnything, RAGAnythingConfig
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 
 from dotenv import load_dotenv
 
@@ -35,9 +35,9 @@ def configure_logging():
     """Configure logging for the application"""
     # Get log directory path from environment variable or use current directory
     log_dir = os.getenv("LOG_DIR", os.getcwd())
-    log_file_path = os.path.abspath(os.path.join(log_dir, "raganything_example_qa.log"))
+    log_file_path = os.path.abspath(os.path.join(log_dir, "multi_model_rag_example_qa.log"))
 
-    print(f"\nRAGAnything example log file: {log_file_path}\n")
+    print(f"\nMultiModelRAG example log file: {log_file_path}\n")
     os.makedirs(os.path.dirname(log_dir), exist_ok=True)
 
     # Get log file max size and backup count from environment variables
@@ -96,7 +96,7 @@ async def process_with_rag(
     parser: str = None,
 ):
     """
-    Process document with RAGAnything
+    Process document with MultiModelRAG
 
     Args:
         file_path: Path to the document
@@ -106,8 +106,8 @@ async def process_with_rag(
         working_dir: Working directory for RAG storage
     """
     try:
-        # Create RAGAnything configuration
-        config = RAGAnythingConfig(
+        # Create MultiModelRAG configuration
+        config = MultiModelRAGConfig(
             working_dir=working_dir or "./rag_storage",
             parser=parser,  # Parser selection: mineru or docling
             parse_method="auto",  # Parse method: auto, ocr, or txt
@@ -212,8 +212,8 @@ async def process_with_rag(
         )
         await lightrag.initialize_storages()
 
-        # Initialize RAGAnything with new dataclass structure
-        rag = RAGAnything(
+        # Initialize MultiModelRAG with new dataclass structure
+        rag = MultiModelRAG(
             config=config,
             lightrag=lightrag,
             llm_model_func=llm_model_func,
@@ -329,7 +329,7 @@ if __name__ == "__main__":
     # Configure logging first
     configure_logging()
 
-    print("RAGAnything Example")
+    print("MultiModelRAG Example")
     print("=" * 30)
     print("Processing document with multimodal RAG pipeline")
     print("=" * 30)

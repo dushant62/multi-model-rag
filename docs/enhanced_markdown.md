@@ -1,10 +1,10 @@
 # Enhanced Markdown Conversion
 
-This document describes the enhanced markdown conversion feature for RAG-Anything, which provides high-quality PDF generation from markdown files with multiple backend options and advanced styling.
+This document describes the enhanced markdown conversion feature for Multi-Model-RAG, which provides high-quality PDF generation from markdown files with multiple backend options and advanced styling.
 
 ## Overview
 
-The enhanced markdown conversion feature provides professional-quality PDF generation from markdown files. It supports multiple conversion backends, advanced styling options, syntax highlighting, and seamless integration with RAG-Anything's document processing pipeline.
+The enhanced markdown conversion feature provides professional-quality PDF generation from markdown files. It supports multiple conversion backends, advanced styling options, syntax highlighting, and seamless integration with Multi-Model-RAG's document processing pipeline.
 
 ## Key Features
 
@@ -23,7 +23,7 @@ The enhanced markdown conversion feature provides professional-quality PDF gener
 
 ```bash
 # Basic installation
-pip install raganything[all]
+pip install multi-model-rag[all]
 
 # Required for enhanced markdown conversion
 pip install markdown weasyprint pygments
@@ -67,7 +67,7 @@ sudo apt-get install -y build-essential python3-dev python3-pip \
 ### Basic Conversion
 
 ```python
-from raganything.enhanced_markdown import EnhancedMarkdownConverter, MarkdownConfig
+from multi_model_rag.enhanced_markdown import EnhancedMarkdownConverter, MarkdownConfig
 
 # Create converter with default settings
 converter = EnhancedMarkdownConverter()
@@ -197,19 +197,19 @@ success = converter.convert_markdown_to_pdf(
 
 ```bash
 # Basic conversion
-python -m raganything.enhanced_markdown document.md --output document.pdf
+python -m multi_model_rag.enhanced_markdown document.md --output document.pdf
 
 # With specific backend
-python -m raganything.enhanced_markdown document.md --method weasyprint
+python -m multi_model_rag.enhanced_markdown document.md --method weasyprint
 
 # With custom CSS file
-python -m raganything.enhanced_markdown document.md --css custom_style.css
+python -m multi_model_rag.enhanced_markdown document.md --css custom_style.css
 
 # Show backend information
-python -m raganything.enhanced_markdown --info
+python -m multi_model_rag.enhanced_markdown --info
 
 # Help
-python -m raganything.enhanced_markdown --help
+python -m multi_model_rag.enhanced_markdown --help
 ```
 
 ## Backend Comparison
@@ -289,15 +289,15 @@ function exampleFunction() {
 ```
 ```
 
-## Integration with RAG-Anything
+## Integration with Multi-Model-RAG
 
-The enhanced markdown conversion integrates seamlessly with RAG-Anything:
+The enhanced markdown conversion integrates seamlessly with Multi-Model-RAG:
 
 ```python
-from raganything import RAGAnything
+from multi_model_rag import MultiModelRAG
 
-# Initialize RAG-Anything
-rag = RAGAnything()
+# Initialize Multi-Model-RAG
+rag = MultiModelRAG()
 
 # Process markdown files - enhanced conversion is used automatically
 await rag.process_document_complete("document.md")
@@ -352,10 +352,10 @@ This document provides comprehensive technical specifications.
 
 ### Code Implementation
 ```python
-from raganything import RAGAnything
+from multi_model_rag import MultiModelRAG
 
 # Initialize system
-rag = RAGAnything(config={
+rag = MultiModelRAG(config={
     "working_dir": "./storage",
     "enable_image_processing": True
 })
@@ -549,4 +549,4 @@ class EnhancedMarkdownConverter:
 
 ## Conclusion
 
-The enhanced markdown conversion feature provides professional-quality PDF generation with flexible styling options and multiple backend support. It seamlessly integrates with RAG-Anything's document processing pipeline while offering standalone functionality for markdown-to-PDF conversion needs.
+The enhanced markdown conversion feature provides professional-quality PDF generation with flexible styling options and multiple backend support. It seamlessly integrates with Multi-Model-RAG's document processing pipeline while offering standalone functionality for markdown-to-PDF conversion needs.

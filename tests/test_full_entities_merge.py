@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 PROCESSOR_SOURCE = (
-    Path(__file__).resolve().parent.parent / "raganything" / "processor.py"
+    Path(__file__).resolve().parent.parent / "multi_model_rag" / "processor.py"
 )
 
 

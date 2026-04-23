@@ -1,6 +1,6 @@
 import pytest
 
-from raganything.batch_parser import BatchParser
+from multi_model_rag.batch_parser import BatchParser
 
 
 def test_batch_parser_uses_paddleocr_parser():
@@ -12,11 +12,11 @@ def test_batch_parser_uses_paddleocr_parser():
     assert batch_parser.parser.__class__.__name__ == "PaddleOCRParser"
 
 
-def test_raganything_initializes_selected_parser(monkeypatch, tmp_path):
+def test_multi_model_rag_initializes_selected_parser(monkeypatch, tmp_path):
     pytest.importorskip("lightrag")
 
-    import raganything.raganything as rag_module
-    from raganything.config import RAGAnythingConfig
+    import multi_model_rag.multi_model_rag as rag_module
+    from multi_model_rag.config import MultiModelRAGConfig
 
     class StubParser:
         def check_installation(self):
@@ -31,11 +31,11 @@ def test_raganything_initializes_selected_parser(monkeypatch, tmp_path):
     monkeypatch.setattr(rag_module, "get_parser", fake_get_parser)
     monkeypatch.setattr(rag_module.atexit, "register", lambda *args, **kwargs: None)
 
-    config = RAGAnythingConfig(
+    config = MultiModelRAGConfig(
         working_dir=str(tmp_path / "rag_workdir"),
         parser="paddleocr",
     )
-    rag = rag_module.RAGAnything(config=config)
+    rag = rag_module.MultiModelRAG(config=config)
 
     assert captured["parser_name"] == "paddleocr"
     assert isinstance(rag.doc_parser, StubParser)
@@ -43,7 +43,7 @@ def test_raganything_initializes_selected_parser(monkeypatch, tmp_path):
 
 @pytest.mark.asyncio
 async def test_processor_parse_document_uses_selected_parser(monkeypatch, tmp_path):
-    import raganything.processor as processor_module
+    import multi_model_rag.processor as processor_module
 
     class FakeLogger:
         def info(self, *args, **kwargs):
@@ -130,3 +130,85 @@ async def test_processor_parse_document_uses_selected_parser(monkeypatch, tmp_pa
     assert content_list_2 == [
         {"type": "text", "text": "parsed by fake parser", "page_idx": 0}
     ]
+
+
+@pytest.mark.asyncio
+async def test_processor_parse_document_routes_html_to_html_parser(
+    monkeypatch, tmp_path
+):
+    import multi_model_rag.processor as processor_module
+
+    class FakeLogger:
+        def info(self, *args, **kwargs):
+            pass
+
+        def warning(self, *args, **kwargs):
+            pass
+
+        def error(self, *args, **kwargs):
+            pass
+
+        def debug(self, *args, **kwargs):
+            pass
+
+    route_calls = {"html": 0, "office": 0, "generic": 0}
+
+    class FakeParser:
+        HTML_FORMATS = {".html", ".htm", ".xhtml"}
+
+        def parse_html(self, **kwargs):
+            route_calls["html"] += 1
+            return [{"type": "text", "text": "html parsed", "page_idx": 0}]
+
+        def parse_office_doc(self, **kwargs):
+            route_calls["office"] += 1
+            return [{"type": "text", "text": "office parsed", "page_idx": 0}]
+
+        def parse_document(self, **kwargs):
+            route_calls["generic"] += 1
+            return [{"type": "text", "text": "generic parsed", "page_idx": 0}]
+
+    monkeypatch.setattr(processor_module, "get_parser", lambda parser_name: FakeParser())
+
+    class DummyProcessor(processor_module.ProcessorMixin):
+        pass
+
+    dummy = DummyProcessor()
+    dummy.config = type(
+        "Config",
+        (),
+        {
+            "parser": "docling",
+            "parser_output_dir": str(tmp_path / "output"),
+            "parse_method": "auto",
+            "display_content_stats": False,
+            "use_full_path": False,
+        },
+    )()
+    dummy.logger = FakeLogger()
+    dummy.parse_cache = None
+
+    async def fake_store_cached_result(*args, **kwargs):
+        return None
+
+    monkeypatch.setattr(
+        DummyProcessor,
+        "_store_cached_result",
+        fake_store_cached_result,
+        raising=False,
+    )
+    monkeypatch.setattr(
+        DummyProcessor,
+        "_generate_content_based_doc_id",
+        lambda self, content_list: "doc-html",
+        raising=False,
+    )
+
+    fake_html = tmp_path / "sample.html"
+    fake_html.write_text("<html><body>Hello</body></html>", encoding="utf-8")
+
+    content_list, doc_id = await dummy.parse_document(str(fake_html))
+
+    assert doc_id == "doc-html"
+    assert route_calls == {"html": 1, "office": 0, "generic": 0}
+    assert content_list == [{"type": "text", "text": "html parsed", "page_idx": 0}]

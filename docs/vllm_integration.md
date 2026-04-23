@@ -1,6 +1,6 @@
-# vLLM Integration Guide for RAG-Anything
+# vLLM Integration Guide for Multi-Model-RAG
 
-[vLLM](https://github.com/vllm-project/vllm) is a high-throughput, memory-efficient inference engine for LLMs. It exposes an OpenAI-compatible API, making it a drop-in backend for RAG-Anything in production environments.
+[vLLM](https://github.com/vllm-project/vllm) is a high-throughput, memory-efficient inference engine for LLMs. It exposes an OpenAI-compatible API, making it a drop-in backend for Multi-Model-RAG in production environments.
 
 ## Why vLLM?
 
@@ -25,9 +25,9 @@
    ```bash
    pip install vllm
    ```
-4. **RAG-Anything installed:**
+4. **Multi-Model-RAG installed:**
    ```bash
-   pip install raganything
+   pip install multi-model-rag
    ```
 
 ## Quick Start
@@ -150,7 +150,7 @@ vllm serve ... --max-model-len 8192
 ```
 
 ### Concurrency
-vLLM handles batching automatically. On the RAG-Anything side, increase `MAX_ASYNC` in your `.env`:
+vLLM handles batching automatically. On the Multi-Model-RAG side, increase `MAX_ASYNC` in your `.env`:
 ```bash
 MAX_ASYNC=16  # vLLM handles concurrent requests efficiently
 ```
@@ -194,7 +194,7 @@ EMBEDDING_BINDING_API_KEY=sk-...
 
 ```
 ┌──────────────────────┐
-│   RAG-Anything       │
+│   Multi-Model-RAG       │
 │  (Document Processing│
 │   + Query Engine)    │
 └──────┬───────────────┘

@@ -1,10 +1,10 @@
 <div align="center">
 
 <div style="margin: 20px 0;">
-  <img src="./assets/logo.png" width="120" height="120" alt="RAG-Anything Logo" style="border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 217, 255, 0.3);">
+  <img src="./assets/logo.png" width="120" height="120" alt="Multi-Model-RAG Logo" style="border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 217, 255, 0.3);">
 </div>
 
-# 🚀 RAG-Anything: All-in-One RAG System
+# 🚀 Multi-Model-RAG: All-in-One RAG System
 
 <div align="center">
   <div style="width: 100%; height: 2px; margin: 20px 0; background: linear-gradient(90deg, transparent, #00d9ff, transparent);"></div>
@@ -13,18 +13,18 @@
 <div align="center">
   <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 25px; text-align: center;">
     <p>
-      <a href='https://github.com/HKUDS/RAG-Anything'><img src='https://img.shields.io/badge/🔥项目-主页-00d9ff?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e'></a>
+      <a href='https://github.com/HKUDS/Multi-Model-RAG'><img src='https://img.shields.io/badge/🔥项目-主页-00d9ff?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e'></a>
       <a href='https://arxiv.org/abs/2510.12323'><img src='https://img.shields.io/badge/📄arXiv-2510.12323-ff6b6b?style=for-the-badge&logo=arxiv&logoColor=white&labelColor=1a1a2e'></a>
       <a href='https://github.com/HKUDS/LightRAG'><img src='https://img.shields.io/badge/⚡基于-LightRAG-4ecdc4?style=for-the-badge&logo=lightning&logoColor=white&labelColor=1a1a2e'></a>
     </p>
     <p>
-      <a href="https://github.com/HKUDS/RAG-Anything/stargazers"><img src='https://img.shields.io/github/stars/HKUDS/RAG-Anything?color=00d9ff&style=for-the-badge&logo=star&logoColor=white&labelColor=1a1a2e' /></a>
+      <a href="https://github.com/HKUDS/Multi-Model-RAG/stargazers"><img src='https://img.shields.io/github/stars/HKUDS/Multi-Model-RAG?color=00d9ff&style=for-the-badge&logo=star&logoColor=white&labelColor=1a1a2e' /></a>
       <img src="https://img.shields.io/badge/🐍Python-3.10-4ecdc4?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e">
-      <a href="https://pypi.org/project/raganything/"><img src="https://img.shields.io/pypi/v/raganything.svg?style=for-the-badge&logo=pypi&logoColor=white&labelColor=1a1a2e&color=ff6b6b"></a>
+      <a href="https://pypi.org/project/multi-model-rag/"><img src="https://img.shields.io/pypi/v/multi-model-rag.svg?style=for-the-badge&logo=pypi&logoColor=white&labelColor=1a1a2e&color=ff6b6b"></a>
     </p>
     <p>
       <a href="https://discord.gg/yF2MmDJyGJ"><img src="https://img.shields.io/badge/💬Discord-社区-7289da?style=for-the-badge&logo=discord&logoColor=white&labelColor=1a1a2e"></a>
-      <a href="https://github.com/HKUDS/RAG-Anything/issues/7"><img src="https://img.shields.io/badge/💬微信群-交流-07c160?style=for-the-badge&logo=wechat&logoColor=white&labelColor=1a1a2e"></a>
+      <a href="https://github.com/HKUDS/Multi-Model-RAG/issues/7"><img src="https://img.shields.io/badge/💬微信群-交流-07c160?style=for-the-badge&logo=wechat&logoColor=white&labelColor=1a1a2e"></a>
     </p>
     <p>
       <a href="README_zh.md"><img src="https://img.shields.io/badge/🇨🇳中文版-1a1a2e?style=for-the-badge"></a>
@@ -69,10 +69,10 @@
 ---
 
 ## 🎉 新闻
-- [X] [2025.08.12]🎯📢 🔍 RAGAnything 现在支持 **VLM增强查询** 模式！当文档包含图片时，系统可以自动将图片与文本上下文一起直接传递给VLM进行综合多模态分析。
-- [X] [2025.07.05]🎯📢 RAGAnything 新增[上下文配置模块](docs/context_aware_processing.md)，支持为多模态内容处理添加相关上下文信息。
-- [X] [2025.07.04]🎯📢 RAGAnything 现在支持多模态内容查询，实现了集成文本、图像、表格和公式处理的增强检索生成功能。
-- [X] [2025.07.03]🎯📢 RAGAnything 在GitHub上达到了1K星标🌟！感谢您的支持和贡献。
+- [X] [2025.08.12]🎯📢 🔍 MultiModelRAG 现在支持 **VLM增强查询** 模式！当文档包含图片时，系统可以自动将图片与文本上下文一起直接传递给VLM进行综合多模态分析。
+- [X] [2025.07.05]🎯📢 MultiModelRAG 新增[上下文配置模块](docs/context_aware_processing.md)，支持为多模态内容处理添加相关上下文信息。
+- [X] [2025.07.04]🎯📢 MultiModelRAG 现在支持多模态内容查询，实现了集成文本、图像、表格和公式处理的增强检索生成功能。
+- [X] [2025.07.03]🎯📢 MultiModelRAG 在GitHub上达到了1K星标🌟！感谢您的支持和贡献。
 
 ---
 
@@ -82,9 +82,9 @@
 
 <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 15px; padding: 25px; margin: 20px 0; border: 2px solid #00d9ff; box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);">
 
-**RAG-Anything**是一个综合性多模态文档处理RAG系统。该系统能够无缝处理和查询包含文本、图像、表格、公式等多模态内容的复杂文档，提供完整的检索增强(RAG)生成解决方案。
+**Multi-Model-RAG**是一个综合性多模态文档处理RAG系统。该系统能够无缝处理和查询包含文本、图像、表格、公式等多模态内容的复杂文档，提供完整的检索增强(RAG)生成解决方案。
 
-<img src="assets/rag_anything_framework.png" alt="RAG-Anything" />
+<img src="assets/multi_model_rag_framework.png" alt="Multi-Model-RAG" />
 
 </div>
 
@@ -110,7 +110,7 @@
 
 ### 核心算法
 
-**RAG-Anything** 采用灵活的分层架构设计，实现多阶段多模态处理流水线，将传统RAG系统扩展为支持异构内容类型的综合处理平台。
+**Multi-Model-RAG** 采用灵活的分层架构设计，实现多阶段多模态处理流水线，将传统RAG系统扩展为支持异构内容类型的综合处理平台。
 
 </div>
 
@@ -252,20 +252,20 @@
 
 ```bash
 # 基础安装
-pip install raganything
+pip install multi-model-rag
 
 # 安装包含扩展格式支持的可选依赖：
-pip install 'raganything[all]'              # 所有可选功能
-pip install 'raganything[image]'            # 图像格式转换 (BMP, TIFF, GIF, WebP)
-pip install 'raganything[text]'             # 文本文件处理 (TXT, MD)
-pip install 'raganything[image,text]'       # 多个功能组合
+pip install 'multi-model-rag[all]'              # 所有可选功能
+pip install 'multi-model-rag[image]'            # 图像格式转换 (BMP, TIFF, GIF, WebP)
+pip install 'multi-model-rag[text]'             # 文本文件处理 (TXT, MD)
+pip install 'multi-model-rag[image,text]'       # 多个功能组合
 ```
 
 #### 选项2：从源码安装
 
 ```bash
-git clone https://github.com/HKUDS/RAG-Anything.git
-cd RAG-Anything
+git clone https://github.com/HKUDS/Multi-Model-RAG.git
+cd Multi-Model-RAG
 pip install -e .
 
 # 安装可选依赖
@@ -293,7 +293,7 @@ pip install -e '.[all]'
 mineru --version
 
 # 检查是否正确配置
-python -c "from raganything import RAGAnything; rag = RAGAnything(); print('✅ MinerU安装正常' if rag.check_parser_installation() else '❌ MinerU安装有问题')"
+python -c "from multi_model_rag import MultiModelRAG; rag = MultiModelRAG(); print('✅ MinerU安装正常' if rag.check_parser_installation() else '❌ MinerU安装有问题')"
 ```
 
 模型在首次使用时自动下载。手动下载参考[MinerU模型源配置](https://github.com/opendatalab/MinerU/blob/master/README_zh-CN.md#22-%E6%A8%A1%E5%9E%8B%E6%BA%90%E9%85%8D%E7%BD%AE)：
@@ -304,7 +304,7 @@ python -c "from raganything import RAGAnything; rag = RAGAnything(); print('✅ 
 
 ```python
 import asyncio
-from raganything import RAGAnything, RAGAnythingConfig
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc
 
@@ -313,8 +313,8 @@ async def main():
     api_key = "your-api-key"
     base_url = "your-base-url"  # 可选
 
-    # 创建 RAGAnything 配置
-    config = RAGAnythingConfig(
+    # 创建 MultiModelRAG 配置
+    config = MultiModelRAGConfig(
         working_dir="./rag_storage",
         parser="mineru",  # 选择解析器：mineru 或 docling
         parse_method="auto",  # 解析方法：auto, ocr 或 txt
@@ -397,8 +397,8 @@ async def main():
         ),
     )
 
-    # 初始化 RAGAnything
-    rag = RAGAnything(
+    # 初始化 MultiModelRAG
+    rag = MultiModelRAG(
         config=config,
         llm_model_func=llm_model_func,
         vision_model_func=vision_model_func,
@@ -426,7 +426,7 @@ async def main():
         multimodal_content=[{
             "type": "table",
             "table_data": """系统,准确率,F1分数
-                            RAGAnything,95.2%,0.94
+                            MultiModelRAG,95.2%,0.94
                             基准方法,87.3%,0.85""",
             "table_caption": "性能对比结果"
         }],
@@ -445,7 +445,7 @@ import asyncio
 from lightrag import LightRAG
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc
-from raganything.modalprocessors import ImageModalProcessor, TableModalProcessor
+from multi_model_rag.modalprocessors import ImageModalProcessor, TableModalProcessor
 
 async def process_multimodal_content():
     # 设置 API 配置
@@ -537,7 +537,7 @@ async def process_multimodal_content():
         "table_body": """
         | 方法 | 准确率 | F1分数 |
         |------|--------|--------|
-        | RAGAnything | 95.2% | 0.94 |
+        | MultiModelRAG | 95.2% | 0.94 |
         | 基准方法 | 87.3% | 0.85 |
         """,
         "table_caption": ["性能对比"],
@@ -571,7 +571,7 @@ await rag.process_folder_complete(
 #### 4. 自定义模态处理器
 
 ```python
-from raganything.modalprocessors import GenericModalProcessor
+from multi_model_rag.modalprocessors import GenericModalProcessor
 
 class CustomModalProcessor(GenericModalProcessor):
     async def process_multimodal_content(self, modal_content, content_type, file_path, entity_name):
@@ -583,7 +583,7 @@ class CustomModalProcessor(GenericModalProcessor):
 
 #### 5. 查询选项
 
-RAG-Anything 提供三种类型的查询方法：
+Multi-Model-RAG 提供三种类型的查询方法：
 
 **纯文本查询** - 使用LightRAG直接进行知识库搜索：
 ```python
@@ -657,7 +657,7 @@ equation_result = await rag.aquery_with_multimodal(
 
 ```python
 import asyncio
-from raganything import RAGAnything
+from multi_model_rag import MultiModelRAG
 from lightrag import LightRAG
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc
@@ -755,8 +755,8 @@ async def load_existing_lightrag():
         else:
             return lightrag_instance.llm_model_func(prompt, system_prompt, history_messages, **kwargs)
 
-    # 现在使用已存在的 LightRAG 实例初始化 RAGAnything
-    rag = RAGAnything(
+    # 现在使用已存在的 LightRAG 实例初始化 MultiModelRAG
+    rag = MultiModelRAG(
         lightrag=lightrag_instance,  # 传入已存在的 LightRAG 实例
         vision_model_func=vision_model_func,
         # 注意：working_dir、llm_model_func、embedding_func 等都从 lightrag_instance 继承
@@ -781,11 +781,11 @@ if __name__ == "__main__":
 
 #### 7. 直接插入内容列表
 
-当您已经有预解析的内容列表（例如，来自外部解析器或之前的处理结果）时，可以直接插入到 RAGAnything 中而无需文档解析：
+当您已经有预解析的内容列表（例如，来自外部解析器或之前的处理结果）时，可以直接插入到 MultiModelRAG 中而无需文档解析：
 
 ```python
 import asyncio
-from raganything import RAGAnything, RAGAnythingConfig
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc
 
@@ -794,8 +794,8 @@ async def insert_content_list_example():
     api_key = "your-api-key"
     base_url = "your-base-url"  # 可选
 
-    # 创建 RAGAnything 配置
-    config = RAGAnythingConfig(
+    # 创建 MultiModelRAG 配置
+    config = MultiModelRAGConfig(
         working_dir="./rag_storage",
         enable_image_processing=True,
         enable_table_processing=True,
@@ -863,8 +863,8 @@ async def insert_content_list_example():
         ),
     )
 
-    # 初始化 RAGAnything
-    rag = RAGAnything(
+    # 初始化 MultiModelRAG
+    rag = MultiModelRAG(
         config=config,
         llm_model_func=llm_model_func,
         vision_model_func=vision_model_func,
@@ -980,7 +980,7 @@ if __name__ == "__main__":
 
 `examples/` 目录包含完整的使用示例：
 
-- **`raganything_example.py`**：基于MinerU的端到端文档处理
+- **`multi_model_rag_example.py`**：基于MinerU的端到端文档处理
 - **`modalprocessors_example.py`**：直接多模态内容处理
 - **`office_document_test.py`**：Office文档解析测试（无需API密钥）
 - **`image_format_test.py`**：图像格式解析测试（无需API密钥）
@@ -990,7 +990,7 @@ if __name__ == "__main__":
 
 ```bash
 # 端到端处理（包含解析器选择）
-python examples/raganything_example.py path/to/document.pdf --api-key YOUR_API_KEY --parser mineru
+python examples/multi_model_rag_example.py path/to/document.pdf --api-key YOUR_API_KEY --parser mineru
 
 # 直接模态处理
 python examples/modalprocessors_example.py --api-key YOUR_API_KEY
@@ -1039,7 +1039,7 @@ PARSE_METHOD=auto              # 解析方法：auto, ocr 或 txt
 
 ### 解析器配置
 
-RAGAnything 现在支持多种解析器，每种解析器都有其特定的优势：
+MultiModelRAG 现在支持多种解析器，每种解析器都有其特定的优势：
 
 #### MinerU 解析器
 - 支持PDF、图像、Office文档等多种格式
@@ -1064,7 +1064,7 @@ mineru -p input.pdf -o output_dir -m ocr     # OCR重点解析
 mineru -p input.pdf -o output_dir -b pipeline --device cuda  # GPU加速
 ```
 
-你也可以通过RAGAnything参数配置解析：
+你也可以通过MultiModelRAG参数配置解析：
 
 ```python
 # 基础解析配置和解析器选择
@@ -1093,24 +1093,24 @@ await rag.process_document_complete(
     source="huggingface",        # 模型源："huggingface", "modelscope", "local"
     # vlm_url="http://127.0.0.1:3000" # 当backend=vlm-http-client时，需指定服务地址
 
-    # RAGAnything标准参数
+    # MultiModelRAG标准参数
     display_stats=True,          # 显示内容统计信息
     split_by_character=None,     # 可选的文本分割字符
     doc_id=None                  # 可选的文档ID
 )
 ```
 
-> **注意**：MinerU 2.0不再使用 `magic-pdf.json` 配置文件。所有设置现在通过命令行参数或函数参数传递。RAG-Anything现在支持多种文档解析器 - 你可以根据需要在MinerU和Docling之间选择。
+> **注意**：MinerU 2.0不再使用 `magic-pdf.json` 配置文件。所有设置现在通过命令行参数或函数参数传递。Multi-Model-RAG现在支持多种文档解析器 - 你可以根据需要在MinerU和Docling之间选择。
 
 ### 处理要求
 
 不同内容类型需要特定的可选依赖：
 
 - **Office文档** (.doc, .docx, .ppt, .pptx, .xls, .xlsx): 安装并配置 [LibreOffice](https://www.libreoffice.org/download/download/)
-- **扩展图像格式** (.bmp, .tiff, .gif, .webp): 使用 `pip install raganything[image]` 安装
-- **文本文件** (.txt, .md): 使用 `pip install raganything[text]` 安装
+- **扩展图像格式** (.bmp, .tiff, .gif, .webp): 使用 `pip install multi-model-rag[image]` 安装
+- **文本文件** (.txt, .md): 使用 `pip install multi-model-rag[text]` 安装
 
-> **📋 快速安装**: 使用 `pip install raganything[all]` 启用所有格式支持（仅Python依赖 - LibreOffice仍需单独安装）
+> **📋 快速安装**: 使用 `pip install multi-model-rag[all]` 启用所有格式支持（仅Python依赖 - LibreOffice仍需单独安装）
 
 ---
 
@@ -1148,8 +1148,8 @@ await rag.process_document_complete(
 </div>
 
 ```bibtex
-@misc{guo2025raganythingallinoneragframework,
-      title={RAG-Anything: All-in-One RAG Framework},
+@misc{guo2025multi_model_ragallinoneragframework,
+      title={Multi-Model-RAG: All-in-One RAG Framework},
       author={Zirui Guo and Xubin Ren and Lingrui Xu and Jiahao Zhang and Chao Huang},
       year={2025},
       eprint={2510.12323},
@@ -1206,11 +1206,11 @@ await rag.process_document_complete(
 *社区增长轨迹*
 
 <div align="center">
-  <a href="https://star-history.com/#HKUDS/RAG-Anything&Date">
+  <a href="https://star-history.com/#HKUDS/Multi-Model-RAG&Date">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=HKUDS/RAG-Anything&type=Date&theme=dark" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=HKUDS/RAG-Anything&type=Date" />
-      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=HKUDS/RAG-Anything&type=Date" style="border-radius: 15px; box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=HKUDS/Multi-Model-RAG&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=HKUDS/Multi-Model-RAG&type=Date" />
+      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=HKUDS/Multi-Model-RAG&type=Date" style="border-radius: 15px; box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);" />
     </picture>
   </a>
 </div>
@@ -1226,8 +1226,8 @@ await rag.process_document_complete(
 </div>
 
 <div align="center">
-  <a href="https://github.com/HKUDS/RAG-Anything/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=HKUDS/RAG-Anything" style="border-radius: 15px; box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);" />
+  <a href="https://github.com/HKUDS/Multi-Model-RAG/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=HKUDS/Multi-Model-RAG" style="border-radius: 15px; box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);" />
   </a>
 </div>
 
@@ -1238,13 +1238,13 @@ await rag.process_document_complete(
     <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="500">
   </div>
   <div style="margin-top: 20px;">
-    <a href="https://github.com/HKUDS/RAG-Anything" style="text-decoration: none;">
+    <a href="https://github.com/HKUDS/Multi-Model-RAG" style="text-decoration: none;">
       <img src="https://img.shields.io/badge/⭐%20在GitHub上为我们点星-1a1a2e?style=for-the-badge&logo=github&logoColor=white">
     </a>
-    <a href="https://github.com/HKUDS/RAG-Anything/issues" style="text-decoration: none;">
+    <a href="https://github.com/HKUDS/Multi-Model-RAG/issues" style="text-decoration: none;">
       <img src="https://img.shields.io/badge/🐛%20报告问题-ff6b6b?style=for-the-badge&logo=github&logoColor=white">
     </a>
-    <a href="https://github.com/HKUDS/RAG-Anything/discussions" style="text-decoration: none;">
+    <a href="https://github.com/HKUDS/Multi-Model-RAG/discussions" style="text-decoration: none;">
       <img src="https://img.shields.io/badge/💬%20讨论交流-4ecdc4?style=for-the-badge&logo=github&logoColor=white">
     </a>
   </div>
@@ -1254,7 +1254,7 @@ await rag.process_document_complete(
   <div style="width: 100%; max-width: 600px; margin: 20px auto; padding: 20px; background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(0, 217, 255, 0.05) 100%); border-radius: 15px; border: 1px solid rgba(0, 217, 255, 0.2);">
     <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
       <span style="font-size: 24px;">⭐</span>
-      <span style="color: #00d9ff; font-size: 18px;">感谢您访问RAG-Anything!</span>
+      <span style="color: #00d9ff; font-size: 18px;">感谢您访问Multi-Model-RAG!</span>
       <span style="font-size: 24px;">⭐</span>
     </div>
     <div style="margin-top: 10px; color: #00d9ff; font-size: 16px;">构建多模态AI的未来</div>
@@ -1262,7 +1262,7 @@ await rag.process_document_complete(
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=20&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=感谢您访问RAG-Anything!;构建多模态AI的未来;如果觉得有用请点星⭐!" alt="Closing Animation" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=20&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=感谢您访问Multi-Model-RAG!;构建多模态AI的未来;如果觉得有用请点星⭐!" alt="Closing Animation" />
 </div>
 
 <style>

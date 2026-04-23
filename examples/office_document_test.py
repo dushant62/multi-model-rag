@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Office Document Parsing Test Script for RAG-Anything
+Office Document Parsing Test Script for Multi-Model-RAG
 
 This script demonstrates how to parse various Office document formats
 using MinerU, including DOC, DOCX, PPT, PPTX, XLS, and XLSX files.
 
 Requirements:
 - LibreOffice installed on the system
-- RAG-Anything package
+- Multi-Model-RAG package
 
 Usage:
     python office_document_test.py --file path/to/office/document.docx
@@ -17,7 +17,7 @@ import argparse
 import asyncio
 import sys
 from pathlib import Path
-from raganything import RAGAnything
+from multi_model_rag import MultiModelRAG
 
 
 def check_libreoffice_installation():
@@ -66,8 +66,8 @@ async def test_office_document_parsing(file_path: str):
     print(f"📄 File format: {file_path.suffix.upper()}")
     print(f"📏 File size: {file_path.stat().st_size / 1024:.1f} KB")
 
-    # Initialize RAGAnything (only for parsing functionality)
-    rag = RAGAnything()
+    # Initialize MultiModelRAG (only for parsing functionality)
+    rag = MultiModelRAG()
 
     try:
         # Test document parsing with MinerU

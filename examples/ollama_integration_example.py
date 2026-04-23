@@ -1,7 +1,7 @@
 """
-Ollama Integration Example with RAG-Anything
+Ollama Integration Example with Multi-Model-RAG
 
-This example demonstrates how to integrate Ollama with RAG-Anything for fully
+This example demonstrates how to integrate Ollama with Multi-Model-RAG for fully
 local text document processing and querying.
 
 Ollama uses a different embedding API (/api/embed) compared to the OpenAI-
@@ -12,7 +12,7 @@ and the embedding function using the ``ollama`` Python library directly.
 Requirements:
 - Ollama running locally: https://ollama.com/
 - ollama Python package: pip install ollama
-- RAG-Anything installed: pip install raganything
+- Multi-Model-RAG installed: pip install multi-model-rag
 
 Quick start:
     ollama pull llama3.2          # or any chat model you prefer
@@ -36,8 +36,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# RAG-Anything imports
-from raganything import RAGAnything, RAGAnythingConfig
+# Multi-Model-RAG imports
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
 from lightrag.utils import EmbeddingFunc
 from lightrag.llm.openai import openai_complete_if_cache
 
@@ -85,7 +85,7 @@ async def ollama_embedding_async(texts: List[str]) -> List[List[float]]:
 
 
 class OllamaRAGIntegration:
-    """Integration class for Ollama with RAG-Anything."""
+    """Integration class for Ollama with Multi-Model-RAG."""
 
     def __init__(self):
         self.host = OLLAMA_HOST
@@ -93,7 +93,7 @@ class OllamaRAGIntegration:
         self.embedding_model = OLLAMA_EMBEDDING_MODEL
         self.embedding_dim = OLLAMA_EMBEDDING_DIM
 
-        self.config = RAGAnythingConfig(
+        self.config = MultiModelRAGConfig(
             working_dir=f"./rag_storage_ollama/{uuid.uuid4()}",
             parser="mineru",
             parse_method="auto",
@@ -175,15 +175,15 @@ class OllamaRAGIntegration:
         )
 
     async def initialize_rag(self) -> bool:
-        """Initialize RAG-Anything with Ollama backends."""
-        print("\nInitializing RAG-Anything with Ollama …")
+        """Initialize Multi-Model-RAG with Ollama backends."""
+        print("\nInitializing Multi-Model-RAG with Ollama …")
         try:
-            self.rag = RAGAnything(
+            self.rag = MultiModelRAG(
                 config=self.config,
                 llm_model_func=ollama_llm_model_func,
                 embedding_func=self._make_embedding_func(),
             )
-            print("✅ RAG-Anything initialized")
+            print("✅ Multi-Model-RAG initialized")
             return True
         except Exception as e:
             print(f"❌ Initialization failed: {e}")
@@ -213,11 +213,11 @@ class OllamaRAGIntegration:
             {
                 "type": "text",
                 "text": (
-                    "Ollama Integration with RAG-Anything\n\n"
+                    "Ollama Integration with Multi-Model-RAG\n\n"
                     "This integration lets you run a fully local RAG pipeline:\n"
                     "- Ollama serves the LLM via an OpenAI-compatible /v1 endpoint\n"
                     "- Ollama serves embeddings via its native /api/embed endpoint\n"
-                    "- RAG-Anything handles document parsing and knowledge-graph construction\n\n"
+                    "- Multi-Model-RAG handles document parsing and knowledge-graph construction\n\n"
                     "Popular embedding models: nomic-embed-text (768-dim), "
                     "mxbai-embed-large (1024-dim), all-minilm (384-dim)\n"
                     "Popular chat models: llama3.2, mistral, gemma3, phi4"
@@ -245,7 +245,7 @@ class OllamaRAGIntegration:
 
 async def main():
     print("=" * 70)
-    print("Ollama + RAG-Anything Integration Example")
+    print("Ollama + Multi-Model-RAG Integration Example")
     print("=" * 70)
 
     integration = OllamaRAGIntegration()

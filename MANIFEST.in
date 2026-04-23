@@ -2,7 +2,8 @@ include requirements.txt
 include README.md
 include README_zh.md
 include LICENSE
-recursive-include raganything *.py
+include multi_model_rag/py.typed
+recursive-include multi_model_rag *.py
 recursive-include examples *.py
 global-exclude *.pyc
 global-exclude __pycache__

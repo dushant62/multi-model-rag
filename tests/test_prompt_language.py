@@ -1,10 +1,10 @@
 """Tests for multilingual prompt template system (addresses #85)."""
 
 import pytest
-import raganything.prompt_manager as prompt_manager_module
+import multi_model_rag.prompt_manager as prompt_manager_module
 
-from raganything.prompt import PROMPTS
-from raganything.prompt_manager import (
+from multi_model_rag.prompt import PROMPTS
+from multi_model_rag.prompt_manager import (
     set_prompt_language,
     get_prompt_language,
     reset_prompts,
@@ -48,7 +48,7 @@ class TestSetPromptLanguage:
 
     def test_chinese_prompts_have_all_keys(self):
         """Chinese templates should cover all English keys."""
-        from raganything.prompts_zh import PROMPTS_ZH
+        from multi_model_rag.prompts_zh import PROMPTS_ZH
 
         english_keys = set(PROMPTS.keys())
         chinese_keys = set(PROMPTS_ZH.keys())

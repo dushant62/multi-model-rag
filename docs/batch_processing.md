@@ -1,6 +1,6 @@
 # Batch Processing
 
-This document describes the batch processing feature for RAG-Anything, which allows you to process multiple documents in parallel for improved throughput.
+This document describes the batch processing feature for Multi-Model-RAG, which allows you to process multiple documents in parallel for improved throughput.
 
 ## Overview
 
@@ -20,13 +20,13 @@ The batch processing feature allows you to process multiple documents concurrent
 
 ```bash
 # Basic installation
-pip install raganything[all]
+pip install multi-model-rag[all]
 
 # Required for batch processing
 pip install tqdm
 
 # Optional for parser='paddleocr'
-pip install raganything[paddleocr]
+pip install multi-model-rag[paddleocr]
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ pip install raganything[paddleocr]
 ### Basic Batch Processing
 
 ```python
-from raganything.batch_parser import BatchParser
+from multi_model_rag.batch_parser import BatchParser
 
 # Create batch parser
 batch_parser = BatchParser(
@@ -63,7 +63,7 @@ print(f"Processing time: {result.processing_time:.2f} seconds")
 
 ```python
 import asyncio
-from raganything.batch_parser import BatchParser
+from multi_model_rag.batch_parser import BatchParser
 
 async def async_batch_processing():
     batch_parser = BatchParser(
@@ -85,12 +85,12 @@ async def async_batch_processing():
 result = asyncio.run(async_batch_processing())
 ```
 
-### Integration with RAG-Anything
+### Integration with Multi-Model-RAG
 
 ```python
-from raganything import RAGAnything
+from multi_model_rag import MultiModelRAG
 
-rag = RAGAnything()
+rag = MultiModelRAG()
 
 # Process documents with batch functionality
 result = rag.process_documents_batch(
@@ -122,20 +122,20 @@ print(f"Total processing time: {result['total_processing_time']:.2f} seconds")
 
 ```bash
 # Basic batch processing
-python -m raganything.batch_parser examples/sample_docs/ --output ./output --workers 4
+python -m multi_model_rag.batch_parser examples/sample_docs/ --output ./output --workers 4
 
 # With specific parser
-python -m raganything.batch_parser examples/sample_docs/ --parser mineru --method auto
-python -m raganything.batch_parser examples/sample_docs/ --parser paddleocr --method ocr
+python -m multi_model_rag.batch_parser examples/sample_docs/ --parser mineru --method auto
+python -m multi_model_rag.batch_parser examples/sample_docs/ --parser paddleocr --method ocr
 
 # Without progress bar
-python -m raganything.batch_parser examples/sample_docs/ --output ./output --no-progress
+python -m multi_model_rag.batch_parser examples/sample_docs/ --output ./output --no-progress
 
 # Dry run (list supported files without processing)
-python -m raganything.batch_parser examples/sample_docs/ --output ./output --dry-run
+python -m multi_model_rag.batch_parser examples/sample_docs/ --output ./output --dry-run
 
 # Help
-python -m raganything.batch_parser --help
+python -m multi_model_rag.batch_parser --help
 ```
 
 ## Configuration
@@ -347,4 +347,4 @@ def process_with_retry(file_paths, max_retries=3):
 
 ## Conclusion
 
-The batch processing feature significantly improves RAG-Anything's throughput for large document collections. It provides flexible configuration options, comprehensive error handling, and seamless integration with the existing RAG-Anything pipeline.
+The batch processing feature significantly improves Multi-Model-RAG's throughput for large document collections. It provides flexible configuration options, comprehensive error handling, and seamless integration with the existing Multi-Model-RAG pipeline.

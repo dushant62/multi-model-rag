@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Batch Processing Example for RAG-Anything
+Batch Processing Example for Multi-Model-RAG
 
 This example demonstrates how to use the batch processing capabilities
 to process multiple documents in parallel for improved throughput.
@@ -8,7 +8,7 @@ to process multiple documents in parallel for improved throughput.
 Features demonstrated:
 - Basic batch processing with BatchParser
 - Asynchronous batch processing
-- Integration with RAG-Anything
+- Integration with Multi-Model-RAG
 - Error handling and progress tracking
 - File filtering and directory processing
 """
@@ -24,8 +24,8 @@ import sys
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from raganything import RAGAnything, RAGAnythingConfig
-from raganything.batch_parser import BatchParser
+from multi_model_rag import MultiModelRAG, MultiModelRAGConfig
+from multi_model_rag.batch_parser import BatchParser
 
 
 def create_sample_documents():
@@ -233,7 +233,7 @@ async def demonstrate_async_batch_processing():
 
 
 async def demonstrate_rag_integration():
-    """Demonstrate batch processing integration with RAG-Anything"""
+    """Demonstrate batch processing integration with Multi-Model-RAG"""
     print("\n" + "=" * 60)
     print("RAG-ANYTHING BATCH INTEGRATION DEMONSTRATION")
     print("=" * 60)
@@ -242,8 +242,8 @@ async def demonstrate_rag_integration():
     sample_files, temp_dir = create_sample_documents()
 
     try:
-        # Initialize RAG-Anything with temporary storage
-        config = RAGAnythingConfig(
+        # Initialize Multi-Model-RAG with temporary storage
+        config = MultiModelRAGConfig(
             working_dir=str(temp_dir / "rag_storage"),
             enable_image_processing=True,
             enable_table_processing=True,
@@ -251,9 +251,9 @@ async def demonstrate_rag_integration():
             max_concurrent_files=2,
         )
 
-        rag = RAGAnything(config=config)
+        rag = MultiModelRAG(config=config)
 
-        print("RAG-Anything initialized with batch processing capabilities")
+        print("Multi-Model-RAG initialized with batch processing capabilities")
 
         # Show available batch methods
         batch_methods = [method for method in dir(rag) if "batch" in method.lower()]
@@ -492,12 +492,12 @@ async def main():
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     )
 
-    print("RAG-Anything Batch Processing Demonstration")
+    print("Multi-Model-RAG Batch Processing Demonstration")
     print("=" * 70)
     print("This example demonstrates various batch processing capabilities:")
     print("  - Basic batch processing with progress tracking")
     print("  - Asynchronous processing for improved performance")
-    print("  - Integration with RAG-Anything pipeline")
+    print("  - Integration with Multi-Model-RAG pipeline")
     print("  - Directory processing with recursive file discovery")
     print("  - Comprehensive error handling and recovery")
 
@@ -544,7 +544,7 @@ async def main():
     print("  - File filtering based on supported document types")
     print("  - Directory processing with recursive file discovery")
     print("  - Asynchronous processing for improved performance")
-    print("  - Integration with RAG-Anything document pipeline")
+    print("  - Integration with Multi-Model-RAG document pipeline")
     print("  - Retry logic for failed documents")
     print("  - Detailed processing statistics and timing")
 

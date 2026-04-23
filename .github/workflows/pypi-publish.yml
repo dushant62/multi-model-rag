@@ -1,4 +1,4 @@
-name: Upload RAGAnything Package
+name: Upload MultiModelRAG Package
 
 on:
   release:
